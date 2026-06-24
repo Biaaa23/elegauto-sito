@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editor sgasate A45</title>
+<style>
+  :root{--gold:#C9A24B;--gold-l:#F0D78A;--em:#06241A;--em2:#0A3D2A;--iv:#F6F1E4;--mut:#C9C3B2}
+  *{box-sizing:border-box}
+  body{margin:0;background:#04150E;color:var(--iv);font-family:system-ui,sans-serif;padding:24px}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:var(--mut);font-size:13px;margin-bottom:18px;line-height:1.5}
+  .wrap{max-width:920px;margin:0 auto}
+  #wave{position:relative;width:100%;height:200px;background:var(--em);border:1px solid rgba(201,162,75,.3);
+        border-radius:14px;overflow:hidden;cursor:crosshair;touch-action:none}
+  canvas{display:block;width:100%;height:100%}
+  .marker{position:absolute;top:0;bottom:0;width:2px;background:var(--gold-l);pointer-events:none}
+  .marker.end{background:#ff7a7a}
+  .sel{position:absolute;top:0;bottom:0;background:rgba(201,162,75,.14);pointer-events:none}
+  .playhead{position:absolute;top:0;bottom:0;width:1px;background:#fff;opacity:.7;pointer-events:none}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  button{background:var(--em2);color:var(--iv);border:1px solid rgba(201,162,75,.4);border-radius:10px;
+         padding:10px 16px;font-size:14px;cursor:pointer;transition:.2s}
+  button:hover{background:rgba(201,162,75,.2)}
+  button.gold{background:linear-gradient(120deg,#8A6420,#C9A24B,#F0D78A);color:#04150E;font-weight:700;border:none}
+  .read{font-variant-numeric:tabular-nums;font-size:15px;color:var(--gold-l)}
+  .read b{color:var(--iv)}
+  label{font-size:13px;color:var(--mut)}
+  .saved{margin-top:20px;background:var(--em);border:1px solid rgba(201,162,75,.25);border-radius:12px;padding:14px 16px}
+  .saved h3{margin:0 0 8px;font-size:14px;color:var(--gold)}
+  #list{font-family:ui-monospace,Menlo,monospace;font-size:13px;white-space:pre-wrap;color:var(--iv)}
+  .hint{color:var(--mut);font-size:12px;margin-top:6px}
+</style></head><body>
+<div class="wrap">
+  <h1>🎚️ Editor sgasate — A45 4MATIC</h1>
+  <p class="sub">
+    <b>Clic</b> sulla forma d'onda = imposta <b style="color:var(--gold-l)">inizio</b> · <b>Shift+clic</b> (o secondo clic) = imposta <b style="color:#ff7a7a">fine</b>.<br>
+    Poi <b>Riproduci selezione</b> / <b>Loop</b> per ascoltare. Quando è perfetta, premi <b>Salva sgasata</b>. Alla fine copiami la lista in basso.
+  </p>
+
+  <div id="wave"><canvas></canvas>
+    <div class="sel" id="sel" style="left:0;width:0"></div>
+    <div class="marker start" id="mStart" style="left:0"></div>
+    <div class="marker end" id="mEnd" style="left:0"></div>
+    <div class="playhead" id="ph" style="left:0;display:none"></div>
+  </div>
+
+  <div class="bar">
+    <span class="read">IN <b id="tIn">0.00</b>s &nbsp;→&nbsp; OUT <b id="tOut">0.00</b>s &nbsp;(<b id="tLen">0.00</b>s)</span>
+  </div>
+  <div class="bar">
+    <button class="gold" id="playSel">▶ Riproduci selezione</button>
+    <button id="loop">🔁 Loop: OFF</button>
+    <button id="playAll">▶ Tutto</button>
+    <button id="stop">■ Stop</button>
+    <button id="nudgeInL">IN −0.05</button>
+    <button id="nudgeInR">IN +0.05</button>
+    <button id="nudgeOutL">OUT −0.05</button>
+    <button id="nudgeOutR">OUT +0.05</button>
+  </div>
+  <div class="bar">
+    <button id="save">💾 Salva sgasata</button>
+    <button id="clear">🗑️ Svuota lista</button>
+  </div>
+
+  <div class="saved">
+    <h3>Sgasate salvate (copia e incolla qui in chat)</h3>
+    <div id="list">— nessuna ancora —</div>
+    <div class="hint">Formato: nome  inizio→fine</div>
+  </div>
+</div>
+
+<script>
+const SRC = 'full.mp3?v=1';
+const cv = document.querySelector('canvas'), ctx = cv.getContext('2d');
+const wave = document.getElementById('wave');
+const elIn=document.getElementById('tIn'), elOut=document.getElementById('tOut'), elLen=document.getElementById('tLen');
+const mS=document.getElementById('mStart'), mE=document.getElementById('mEnd'), selEl=document.getElementById('sel'), ph=document.getElementById('ph');
+let DUR=0, inT=0, outT=0, buffer=null, actx=null, srcNode=null, looping=false, rafId=null, playStart=0, playFrom=0, playTo=0;
+
+const ac = new (window.AudioContext||window.webkitAudioContext)();
+fetch(SRC).then(r=>r.arrayBuffer()).then(b=>ac.decodeAudioData(b)).then(buf=>{
+  buffer=buf; DUR=buf.duration; outT=DUR; drawWave(buf); update();
+});
+
+function drawWave(buf){
+  const W=cv.width=wave.clientWidth*devicePixelRatio, H=cv.height=wave.clientHeight*devicePixelRatio;
+  const data=buf.getChannelData(0), step=Math.floor(data.length/W);
+  ctx.clearRect(0,0,W,H); ctx.fillStyle='#C9A24B';
+  for(let x=0;x<W;x++){
+    let min=1,max=-1;
+    for(let i=0;i<step;i++){const v=data[x*step+i]||0; if(v<min)min=v; if(v>max)max=v;}
+    const y1=(1+min)*H/2, y2=(1+max)*H/2;
+    ctx.fillRect(x,y1,1,Math.max(1,y2-y1));
+  }
+}
+addEventListener('resize',()=>{if(buffer)drawWave(buffer);update();});
+
+function xToT(clientX){const r=wave.getBoundingClientRect();return Math.max(0,Math.min(DUR,(clientX-r.left)/r.width*DUR));}
+function tToPct(t){return (t/DUR*100);}
+function update(){
+  elIn.textContent=inT.toFixed(2); elOut.textContent=outT.toFixed(2); elLen.textContent=(outT-inT).toFixed(2);
+  mS.style.left=tToPct(inT)+'%'; mE.style.left=tToPct(outT)+'%';
+  selEl.style.left=tToPct(inT)+'%'; selEl.style.width=tToPct(outT-inT)+'%';
+}
+wave.addEventListener('pointerdown',e=>{
+  const t=xToT(e.clientX);
+  if(e.shiftKey){ outT=Math.max(t,inT+0.02); }
+  else { inT=t; if(outT<=inT) outT=Math.min(DUR,inT+0.5); }
+  update();
+});
+// second-click-as-end convenience: double click sets end
+wave.addEventListener('dblclick',e=>{ outT=Math.max(xToT(e.clientX),inT+0.02); update(); });
+
+function stop(){ if(srcNode){try{srcNode.stop()}catch(_){} srcNode=null;} cancelAnimationFrame(rafId); ph.style.display='none'; }
+function play(from,to){
+  stop(); if(ac.state==='suspended')ac.resume();
+  srcNode=ac.createBufferSource(); srcNode.buffer=buffer; srcNode.connect(ac.destination);
+  playFrom=from; playTo=to; playStart=ac.currentTime;
+  srcNode.start(0,from,Math.max(0.02,to-from));
+  ph.style.display='block';
+  srcNode.onended=()=>{ if(looping && tickActive){ play(playFrom,playTo); } else { ph.style.display='none'; } };
+  const tick=()=>{ const el=ac.currentTime-playStart+playFrom; ph.style.left=tToPct(Math.min(el,to))+'%'; rafId=requestAnimationFrame(tick); };
+  tick();
+}
+let tickActive=false;
+document.getElementById('playSel').onclick=()=>{tickActive=true;play(inT,outT);};
+document.getElementById('loop').onclick=e=>{looping=!looping; e.target.textContent='🔁 Loop: '+(looping?'ON':'OFF'); e.target.classList.toggle('gold',looping); if(looping){tickActive=true;play(inT,outT);}};
+document.getElementById('playAll').onclick=()=>{tickActive=true;looping=false;play(0,DUR);};
+document.getElementById('stop').onclick=()=>{tickActive=false;looping=false;document.getElementById('loop').textContent='🔁 Loop: OFF';document.getElementById('loop').classList.remove('gold');stop();};
+const nudge=(which,d)=>{ if(which==='in'){inT=Math.max(0,Math.min(outT-0.02,inT+d));}else{outT=Math.max(inT+0.02,Math.min(DUR,outT+d));} update(); };
+document.getElementById('nudgeInL').onclick=()=>nudge('in',-0.05);
+document.getElementById('nudgeInR').onclick=()=>nudge('in',0.05);
+document.getElementById('nudgeOutL').onclick=()=>nudge('out',-0.05);
+document.getElementById('nudgeOutR').onclick=()=>nudge('out',0.05);
+
+let saved=[];
+function renderList(){ document.getElementById('list').textContent = saved.length? saved.map((s,i)=>`rev-${i+1}  ${s.in.toFixed(2)}→${s.out.toFixed(2)}  (${(s.out-s.in).toFixed(2)}s)`).join('\n') : '— nessuna ancora —'; }
+document.getElementById('save').onclick=()=>{ saved.push({in:inT,out:outT}); renderList(); };
+document.getElementById('clear').onclick=()=>{ saved=[]; renderList(); };
+</script>
+</body></html>

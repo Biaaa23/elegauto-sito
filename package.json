@@ -1,0 +1,13 @@
+{
+  "name": "elegauto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito vetrina one-page ElegAuto — Tailwind compilato (no CDN).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

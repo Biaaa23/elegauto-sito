@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ElegAuto — Eleganza. Cura. Distinzione. | Salone Auto Mazzarino</title>
+<meta name="description" content="ElegAuto, Mazzarino (CL). Usato garantito e controllato, auto impeccabili. Finanziamenti, test drive e consegna ovunque. La fiducia al centro." />
+
+<!-- ⚠️ Sostituisci https://www.elegauto.it con il dominio reale quando pubblichi -->
+<link rel="canonical" href="https://www.elegauto.it/" />
+<meta name="theme-color" content="#04150E" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="ElegAuto" />
+
+<!-- Favicon: silhouette auto del logo ElegAuto (oro su smeraldo) -->
+<link rel="icon" href="favicon.ico?v=3" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png?v=3" />
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png?v=3" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=3" />
+
+<!-- Open Graph (anteprima su WhatsApp/Facebook/LinkedIn) -->
+<meta property="og:type" content="business.business" />
+<meta property="og:site_name" content="ElegAuto" />
+<meta property="og:title" content="ElegAuto — Eleganza. Cura. Distinzione." />
+<meta property="og:description" content="Salone d'auto a Mazzarino (CL). Usato garantito e controllato, finanziamenti, test drive e consegna ovunque." />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:url" content="https://www.elegauto.it/" />
+<meta property="og:image" content="https://www.elegauto.it/assets/img/car-1.jpg" />
+<meta property="og:image:alt" content="Auto selezionata ElegAuto" />
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ElegAuto — Eleganza. Cura. Distinzione." />
+<meta name="twitter:description" content="Salone d'auto a Mazzarino (CL). Usato garantito, finanziamenti, test drive e consegna ovunque." />
+<meta name="twitter:image" content="https://www.elegauto.it/assets/img/car-1.jpg" />
+
+<!-- Dati strutturati: schema AutoDealer (Google / Maps / SEO locale) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "ElegAuto",
+  "description": "Salone d'auto a Mazzarino (CL). Usato garantito e controllato, finanziamenti, test drive e consegna ovunque.",
+  "url": "https://www.elegauto.it/",
+  "telephone": "+393460176075",
+  "image": "https://www.elegauto.it/assets/img/car-1.jpg",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale della Regione 83",
+    "addressLocality": "Mazzarino",
+    "addressRegion": "CL",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.3036,
+    "longitude": 14.2114
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00", "closes": "13:00"
+  },{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "15:30", "closes": "19:30"
+  }],
+  "sameAs": [
+    "https://instagram.com/elegauto.official",
+    "https://tiktok.com/@elegauto_"
+  ]
+}
+</script>
+
+<!-- Tailwind compilato e minificato (sostituisce il CDN render-blocking).
+     Per rigenerarlo dopo modifiche alle classi: npm run build:css -->
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root { --gold-grad: linear-gradient(120deg,#8A6420 0%,#C9A24B 25%,#F0D78A 50%,#C9A24B 75%,#8A6420 100%); }
+  html { scroll-behavior: smooth; }
+  body { background: #04150E; overflow-x: hidden; }
+  ::selection { background: #C9A24B; color: #04150E; }
+
+  /* Gold metallic text */
+  .gold-text {
+    background: var(--gold-grad);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .gold-shine { animation: shine 6s linear infinite; }
+  @keyframes shine { to { background-position: 200% center; } }
+
+  /* Hairline gold divider */
+  .hr-gold { height:1px; background:linear-gradient(90deg,transparent,#C9A24B66,transparent); }
+
+  /* Reveal on scroll */
+  .reveal { opacity:0; transform: translateY(40px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal-l { opacity:0; transform: translateX(-60px); transition: all 1.1s cubic-bezier(.2,.7,.2,1); }
+  .reveal-l.in { opacity:1; transform:none; }
+  .reveal-r { opacity:0; transform: translateX(60px); transition: all 1.1s cubic-bezier(.2,.7,.2,1); }
+  .reveal-r.in { opacity:1; transform:none; }
+  .reveal-s { opacity:0; transform: scale(.92); transition: all 1.2s cubic-bezier(.2,.7,.2,1); }
+  .reveal-s.in { opacity:1; transform:none; }
+  [data-delay="1"]{transition-delay:.12s}
+  [data-delay="2"]{transition-delay:.24s}
+  [data-delay="3"]{transition-delay:.36s}
+  [data-delay="4"]{transition-delay:.48s}
+
+  /* Cinematic scroll-linked entrance (scrubbed): viaggio lungo + assestamento con overshoot.
+     Lo stato di partenza/arrivo è gestito interamente via JS (transform+opacity inline).
+     Qui solo i presupposti perf + il fallback no-JS / reduced-motion. */
+  .cine { opacity:0; will-change: transform, opacity; transform-style: preserve-3d; backface-visibility: hidden; }
+  .cine-stage { perspective: 1400px; perspective-origin: 50% 40%; }
+  html.no-js .cine { opacity:1; }
+
+  /* Luxe reveal — blur-to-focus rise with easing settle (costoso & raffinato) */
+  .luxe-rise { opacity:0; transform: translateY(38px); filter: blur(16px);
+    transition: opacity 1.35s cubic-bezier(.16,.84,.32,1), transform 1.35s cubic-bezier(.16,.84,.32,1), filter 1.35s cubic-bezier(.16,.84,.32,1); }
+  .luxe-rise.in { opacity:1; transform:none; filter:blur(0); }
+  .luxe-rise.d1.in { transition-delay:.16s; }
+  .luxe-rise.d2.in { transition-delay:.42s; }
+  .luxe-rise.d3.in { transition-delay:.72s; }
+  /* gold hairline that draws under the title once revealed */
+  .luxe-line { height:1px; width:0; margin:1.4rem auto 0; background:linear-gradient(90deg,transparent,#C9A24B,transparent);
+    transition: width 1.4s cubic-bezier(.16,.84,.32,1); transition-delay:.6s; }
+  .luxe-line.in { width:min(420px,60vw); }
+
+  /* Char stagger for hero */
+  .char { display:inline-block; opacity:0; transform: translateY(80px) rotate(6deg); animation: rise .9s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes rise { to { opacity:1; transform:none; } }
+  /* gold gradient must be re-applied per-char: clipped bg lives on the element,
+     but split inline-block chars need their own clip or they render transparent */
+  .gold-text .char { background: var(--gold-grad); background-size:200% auto;
+    -webkit-background-clip:text; background-clip:text; }
+
+  /* Floating car */
+  .float { animation: floaty 6s ease-in-out infinite; }
+  @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+  .spin-slow { animation: spin 26s linear infinite; }
+  .spin-rev { animation: spin 34s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .drift { animation: drift 9s ease-in-out infinite; }
+  .drift-2 { animation: drift 11s ease-in-out infinite; }
+  @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(12px,-16px)} }
+  .orb { animation: orb 14s ease-in-out infinite; }
+  @keyframes orb { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,-30px) scale(1.15)} }
+  /* Elegant ambient motion (replaces the old streak lines): drifting gold dust + a slow light sheen */
+  .dust { position:absolute; border-radius:50%; background:radial-gradient(circle at 35% 35%, rgba(246,241,228,.95), rgba(201,162,75,0) 70%);
+          opacity:0; will-change:transform,opacity; animation:dustDrift linear infinite; }
+  @keyframes dustDrift { 0%{transform:translate3d(0,22px,0) scale(.5);opacity:0} 14%{opacity:.6} 86%{opacity:.5} 100%{transform:translate3d(46px,-150px,0) scale(1.05);opacity:0} }
+  .sheen-sweep { position:absolute; inset:-25% -12%; pointer-events:none; mix-blend-mode:screen;
+          background:linear-gradient(112deg, transparent 40%, rgba(240,215,138,.10) 47%, rgba(255,255,255,.07) 50%, rgba(240,215,138,.10) 53%, transparent 60%);
+          transform:translateX(-38%); animation:sheenSweep 8s ease-in-out infinite; }
+  @keyframes sheenSweep { 0%,100%{transform:translateX(-38%)} 50%{transform:translateX(38%)} }
+  @media (prefers-reduced-motion:reduce){ .dust,.sheen-sweep{ animation:none; opacity:0; } }
+
+  /* Ghost background word */
+  .ghost { -webkit-text-stroke:1px rgba(201,162,75,.14); color:transparent; }
+
+  /* Numeri esperienza 01/02/03: oro leggibile, sopra la foto, ingresso scenico */
+  .exp-num {
+    z-index:4; transform-origin:left top;
+    --nx:0px; --ny:0px; --nsc:1; --nop:1;
+    background:linear-gradient(135deg,#F8EBC0,#E7C878 38%,#C9A24B 64%,#8A6420);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+    -webkit-text-stroke:1px rgba(245,225,170,.45);
+    filter:drop-shadow(0 10px 28px rgba(0,0,0,.6));
+    transform:translate(var(--nx),var(--ny)) scale(var(--nsc));
+    opacity:var(--nop); will-change:transform,opacity;
+  }
+  .exp-num-r { transform-origin:right top; }
+  @media (prefers-reduced-motion:reduce){
+    .exp-num { transform:none !important; opacity:1 !important; }
+  }
+
+  /* Marquee */
+  .marquee { display:flex; width:max-content; animation: scroll-x 32s linear infinite; }
+  @keyframes scroll-x { to { transform: translateX(-50%); } }
+  .marquee-up { animation: scroll-up 22s linear infinite; }
+  .marquee-down { animation: scroll-down 22s linear infinite; }
+  @keyframes scroll-up { from{transform:translateY(0)} to{transform:translateY(-50%)} }
+  @keyframes scroll-down { from{transform:translateY(-50%)} to{transform:translateY(0)} }
+
+  /* Hotspot pulse */
+  .pulse::before{content:'';position:absolute;inset:-8px;border-radius:9999px;border:1px solid #C9A24B;animation:ping 2.4s ease-out infinite;}
+  @keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+
+  .btn-gold { background: var(--gold-grad); background-size:200% auto; color:#04150E; transition: background-position .6s, transform .25s, box-shadow .25s; }
+  .btn-gold:hover { background-position:right center; transform: translateY(-2px); box-shadow:0 14px 40px -10px rgba(201,162,75,.6); }
+
+  .link-underline { position:relative; }
+  .link-underline::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#C9A24B;transition:width .4s;}
+  .link-underline:hover::after{width:100%;}
+
+  /* premium micro-interactions */
+  #valori .group, #recensioni figure { transition: transform .5s cubic-bezier(.2,.7,.2,1), border-color .5s, box-shadow .5s; }
+  #valori .group:hover, #recensioni figure:hover { transform: translateY(-7px); box-shadow: 0 26px 60px -26px rgba(201,162,75,.4); border-color: rgba(201,162,75,.55); }
+  #valori .group svg { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  #valori .group:hover svg { transform: scale(1.14) rotate(-4deg); }
+  .gold-text { transition: letter-spacing .5s ease; }
+  #recensioni figure:hover .text-gold { letter-spacing: .12em; }
+  #contatti li:hover svg { transform: scale(1.15); }
+  #contatti li svg { transition: transform .4s ease; }
+  .btn-gold { will-change: transform; }
+  .magnetic { transition: transform .2s cubic-bezier(.2,.7,.2,1); }
+
+  /* gold sheen sweep on cards */
+  #valori .group, #recensioni figure { position: relative; overflow: hidden; }
+  #valori .group::after, #recensioni figure::after { content:''; position:absolute; top:0; left:-120%; width:55%; height:100%; background:linear-gradient(115deg,transparent,rgba(240,215,138,.16),transparent); transform:skewX(-20deg); transition:left .85s cubic-bezier(.2,.7,.2,1); pointer-events:none; }
+  #valori .group:hover::after, #recensioni figure:hover::after { left:150%; }
+
+  /* tags under the phone */
+  #phoneWords span { transition: transform .35s cubic-bezier(.2,.7,.2,1), background-color .35s, border-color .35s, color .35s; cursor: pointer; }
+  #phoneWords span:hover { transform: translateY(-5px); border-color: rgba(201,162,75,.65); background: rgba(201,162,75,.12); }
+
+  /* social + contact icons */
+  #contatti a svg { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  #contatti a:hover svg { transform: scale(1.2) rotate(-5deg); }
+
+  /* scroll progress bar */
+  #scrollbar { position: fixed; top:0; left:0; height:2px; width:0; z-index:60; background:linear-gradient(90deg,#8A6420,#F0D78A,#C9A24B); box-shadow:0 0 12px rgba(201,162,75,.6); }
+
+  /* custom cursor: golden arrow */
+  @media (pointer:fine) {
+    body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor .group, body.has-cursor figure { cursor:none; }
+    #curArrow { position:fixed; top:0; left:0; z-index:90; pointer-events:none; transform-origin:2px 2px; transform:scale(1); transition:transform .22s cubic-bezier(.2,.7,.2,1); filter:drop-shadow(0 3px 6px rgba(0,0,0,.5)); will-change:left,top,transform; }
+    #curArrow.active { transform:scale(1.18); }
+  }
+
+  .hex-text { background-color:transparent; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cg fill='none' stroke='%23E8C874' stroke-width='4'%3E%3Cpath d='M28 0L56 16V48L28 64L0 48V16Z'/%3E%3Cpath d='M28 36L56 52V84L28 100L0 84V52Z'/%3E%3C/g%3E%3C/svg%3E"); background-size:24px auto; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; filter:drop-shadow(0 3px 12px rgba(0,0,0,.5)); }
+  #hexLed polygon { fill:none; stroke:#C9A24B; stroke-width:1.1; opacity:.06; animation:hexglow 3.4s ease-in-out infinite; }
+  @keyframes hexglow { 0%,100%{opacity:.06} 50%{opacity:.5; filter:drop-shadow(0 0 5px rgba(201,162,75,.8))} }
+
+  .counting { animation: countpulse .6s ease; }
+  @keyframes countpulse { 0%{transform:scale(.7);opacity:.5} 100%{transform:scale(1);opacity:1} }
+
+  /* scattered car gallery (tour bg) */
+  #tourGallery img, #tourGallery video { position:absolute; border-radius:14px; object-fit:cover; border:1px solid rgba(201,162,75,.28); box-shadow:0 18px 44px -18px rgba(0,0,0,.75); opacity:0; pointer-events:auto; cursor:pointer; transition:opacity .9s ease, left .7s cubic-bezier(.2,.7,.2,1), top .7s cubic-bezier(.2,.7,.2,1); animation:gdrift var(--d,9s) ease-in-out infinite; animation-delay:var(--ad,0s); will-change:transform; }
+  #tourGallery img.in, #tourGallery video.in { opacity:var(--op,.5); }
+  @keyframes gdrift { 0%,100%{transform:translateY(0) rotate(var(--r,0deg))} 50%{transform:translateY(-16px) rotate(var(--r,0deg))} }
+  #tourGallery img:hover, #tourGallery video:hover { animation-play-state:paused; opacity:1 !important; transform:scale(1.14); z-index:8; border-color:rgba(201,162,75,.75); box-shadow:0 28px 64px -18px rgba(0,0,0,.85); transition:transform .4s cubic-bezier(.2,.7,.2,1), opacity .35s, border-color .35s, box-shadow .35s; }
+
+  /* auto gold sheen sweep (logo card) */
+  .sheen-auto { position:relative; overflow:hidden; transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s, border-color .5s; }
+  .sheen-auto::after { content:''; position:absolute; top:0; left:-150%; width:55%; height:100%; background:linear-gradient(115deg,transparent,rgba(240,215,138,.28),transparent); transform:skewX(-20deg); animation:sheenSweep 5.5s ease-in-out infinite; pointer-events:none; }
+  @keyframes sheenSweep { 0%,55%{left:-150%} 78%,100%{left:170%} }
+  .sheen-auto:hover { transform:translateY(-6px); box-shadow:0 30px 70px -28px rgba(201,162,75,.5); border-color:rgba(201,162,75,.6); }
+
+  /* lively gold sweep reveal */
+  .sweep { position:absolute; inset:0; z-index:40; pointer-events:none; overflow:hidden; opacity:0; }
+  .sweep::before { content:''; position:absolute; top:-40%; left:0; width:38%; height:180%; background:linear-gradient(115deg,transparent,rgba(240,215,138,.22),transparent); transform:skewX(-18deg) translateX(-70vw); }
+  .sweep.go { opacity:1; }
+  .sweep.go::before { animation:sweepMove 1s cubic-bezier(.4,0,.2,1) forwards; }
+  @keyframes sweepMove { to { transform:skewX(-18deg) translateX(180vw); } }
+
+  /* zoom hotspots */
+  .hotspot { position:absolute; z-index:10; }
+  .hs-dot { display:block; width:11px; height:11px; border-radius:9999px; background:#C9A24B; box-shadow:0 0 0 4px rgba(201,162,75,.22); }
+  .hs-dot::before { content:''; position:absolute; inset:-7px; border-radius:9999px; border:1px solid #C9A24B; animation:ping 2.4s ease-out infinite; }
+  .hs-label { position:absolute; left:20px; top:-8px; white-space:nowrap; background:rgba(4,21,14,.88); border:1px solid rgba(201,162,75,.45); color:#F6F1E4; font-size:12px; letter-spacing:.04em; padding:5px 11px; border-radius:9999px; opacity:0; transform:translateX(-10px); transition:opacity .45s,transform .45s; pointer-events:none; }
+  .group:hover .hs-label { opacity:1; transform:translateX(0); }
+
+  /* esperienza: foto reali con Ken Burns + glow */
+  .exp-frame { position:relative; }
+  .exp-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.08); animation:kenburns 18s ease-in-out infinite alternate; will-change:transform; }
+  .exp-frame:nth-child(1) .exp-photo { animation-duration:20s; }
+  @keyframes kenburns { 0%{transform:scale(1.08) translate(0,0)} 100%{transform:scale(1.16) translate(-2.5%,-2%)} }
+  .exp-photo.cover-top { object-position:center 32%; }
+  .exp-frame::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(4,21,14,.05) 0%,rgba(4,21,14,.12) 55%,rgba(4,21,14,.62) 100%); z-index:2; }
+  .exp-frame .hotspot { z-index:5; }
+  .exp-frame .exp-sheen { content:''; position:absolute; top:0; left:-130%; width:55%; height:100%; z-index:3; background:linear-gradient(115deg,transparent,rgba(240,215,138,.22),transparent); transform:skewX(-20deg); transition:left 1s cubic-bezier(.2,.7,.2,1); pointer-events:none; }
+  .group:hover .exp-sheen { left:160%; }
+  .group:hover .exp-photo { animation-play-state:paused; transform:scale(1.2); transition:transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  @media (prefers-reduced-motion:reduce){ .exp-photo{ animation:none; } }
+
+  /* ===== Esperienza — motion in stile Framer Motion ===== */
+  /* tilt 3D al passaggio del mouse (depth) */
+  .exp-pcol { perspective:1200px; }
+  .exp-frame { transform-style:preserve-3d; transition: transform .6s cubic-bezier(.2,.8,.2,1), box-shadow .6s ease; will-change:transform; }
+  .exp-frame.tilting { transition: box-shadow .6s ease; }
+  .exp-frame:hover { box-shadow:0 40px 90px -38px rgba(0,0,0,.78), 0 0 0 1px rgba(201,162,75,.30); }
+  .exp-frame .exp-glare { position:absolute; inset:0; z-index:4; pointer-events:none; opacity:0; mix-blend-mode:overlay;
+    background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%), rgba(255,247,224,.55), transparent 60%);
+    transition:opacity .4s ease; }
+  .exp-frame:hover .exp-glare { opacity:1; }
+  /* ingresso cinematografico scrubbed + parallax verticale (la foto fluttua a velocità diversa) */
+  .exp-parax {
+    --ep:0px; --ex:0px; --escale:1; --erot:0deg; --eblur:0px; --eop:1;
+    transform: translate3d(var(--ex,0px), var(--ep,0px), 0) scale(var(--escale,1)) rotate(var(--erot,0deg));
+    filter: blur(var(--eblur,0px));
+    opacity: var(--eop,1);
+    will-change: transform, filter, opacity;
+  }
+  /* hotspot: entrata a molla, in sequenza */
+  .exp-frame .hotspot { opacity:0; transform: scale(.3) translateY(10px); transition: opacity .5s ease, transform .75s cubic-bezier(.34,1.56,.64,1); }
+  .exp-frame.spots-in .hotspot { opacity:1; transform:none; }
+  /* titoli: parole che salgono in sequenza (stagger) */
+  .exp-wmask { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.06em; }
+  .exp-word { display:inline-block; transform: translateY(115%) rotate(3deg); transition: transform .85s cubic-bezier(.2,.85,.25,1); }
+  .exp-head.in .exp-word { transform:none; }
+  @media (prefers-reduced-motion:reduce){
+    .exp-frame{ transform:none !important; }
+    .exp-frame .hotspot{ opacity:1 !important; transform:none !important; }
+    .exp-word{ transform:none !important; }
+    .exp-parax{ transform:none !important; }
+  }
+
+  /* tablet (iPad): keep the left category panel from sliding under the video */
+  @media (min-width:768px) and (max-width:1179px) {
+    [data-panel] { max-width:42% !important; }
+  }
+  /* ===== Interactive accelerator pedal (now in "Sportiva tedesca") ===== */
+  #pedalRig{ user-select:none; -webkit-user-select:none; touch-action:manipulation; }
+  #pedalRig{ transition:opacity .3s ease; }
+  /* soft black "well" so the pedal melts into the hexagons (no hard box) */
+  .pedal-well{ position:absolute; left:50%; top:54%; width:165%; height:165%; transform:translate(-50%,-50%);
+    background:radial-gradient(ellipse 52% 58% at 50% 52%, rgba(0,0,0,.66), rgba(0,0,0,.34) 46%, transparent 76%);
+    filter:blur(9px); pointer-events:none; z-index:0; }
+  #pedalGlowDiv{ position:absolute; left:50%; top:54%; width:80%; height:80%; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(201,162,75,.45), transparent 66%); filter:blur(16px);
+    opacity:0; transition:opacity .2s ease; pointer-events:none; z-index:0; }
+  #pedalRig.revving #pedalGlowDiv{ opacity:1; }
+  #pedalRig.redline #pedalGlowDiv{ background:radial-gradient(circle, rgba(224,70,59,.5), transparent 66%); }
+  #tachNeedle{ transform-box: view-box; transform-origin:150px 175px; will-change:transform; }
+  #rpmNum{ font-variant-numeric: tabular-nums; }
+  #pedalBtn{ -webkit-tap-highlight-color:transparent; cursor:pointer; background:none; border:0;
+    padding:0; display:block; outline:none; position:relative; z-index:1; }
+  #pedalBtn{ width:74px; }   /* sotto il contagiri */
+  /* straight pedal pad — presses inward (down + in), never sideways */
+  #pedalGroup{ transform-box: view-box; transform-origin:100px 85px;
+    transition: transform .13s cubic-bezier(.3,.7,.3,1); }
+  #pedalRig.pressed #pedalGroup{ transform: translateY(8px) scale(.9); }
+  #pedalBtn:focus-visible #pedalPad{ stroke:#F0D78A; stroke-width:3.5; }
+  #pedalHint{ animation: hintPulse 2.2s ease-in-out infinite; }
+
+  /* ===== Hero vetrina — car cards scrolling to the right ===== */
+  #heroBg{ transition:opacity .5s ease; z-index:0; }
+  #heroDeck .deck-mask{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent); }
+  #heroDeck .deck-track{ display:flex; gap:1.2rem; width:max-content; perspective:900px; animation:deckScroll 56s linear infinite; }
+  #heroDeck .deck-track:hover{ animation-play-state:paused; }
+  @keyframes deckScroll{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  /* gravità/ombra/oro sulla singola card */
+  /* slot fermo: riceve l'hover e non si muove (così la freccia resta sempre sulla card) */
+  #heroDeck .deck-card{ position:relative; width:224px; aspect-ratio:3/4; flex:0 0 auto; cursor:pointer; }
+  /* parte visiva: questa va al centro, cresce, trema e ruota — lo slot resta dov'è */
+  #heroDeck .deck-inner{ position:absolute; inset:0; border-radius:1.1rem; overflow:hidden;
+    border:2px solid rgba(201,162,75,.45); background:#06241A;
+    box-shadow:0 18px 40px -20px rgba(0,0,0,.7), inset 0 0 0 1px rgba(240,215,138,.12);
+    --rx:0deg; --ry:0deg; --sc:1; --shift:0px; --jx:0px; --jy:0px;
+    transform-style:preserve-3d; will-change:transform;
+    transform:perspective(680px) translate3d(calc(var(--jx) + var(--shift)),var(--jy),0) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--sc));
+    transition:box-shadow .3s ease, border-color .3s ease, opacity .4s ease, --sc .45s cubic-bezier(.2,.9,.2,1), --shift .55s cubic-bezier(.2,.9,.2,1); }
+  /* hover-zoom: la card sotto la freccia va al centro e cresce; le altre due quasi spariscono ai lati; la gravità (tilt) resta */
+  @property --sc{ syntax:'<number>'; inherits:false; initial-value:1; }
+  @property --shift{ syntax:'<length>'; inherits:false; initial-value:0px; }
+  @property --jx{ syntax:'<length>'; inherits:false; initial-value:0px; }
+  @property --jy{ syntax:'<length>'; inherits:false; initial-value:0px; }
+  #heroDeck .deck-mask{ padding-top:3.2rem; padding-bottom:3.2rem; }
+  #heroDeck .deck-card.is-zoom{ z-index:5; }
+  #heroDeck .deck-card.is-zoom .deck-inner{ --sc:1.34; border-color:rgba(240,215,138,1);
+    box-shadow:0 46px 95px -22px rgba(0,0,0,.92), 0 0 44px -4px rgba(201,162,75,.62), inset 0 0 0 1px rgba(240,215,138,.55);
+    animation:deckTremble 2.8s ease-in-out infinite; }
+  /* tremolio lento e fluido, oscillazione continua mentre la card è ingrandita */
+  @keyframes deckTremble{
+    0%{--jx:0px;--jy:0px} 25%{--jx:2px;--jy:-1.5px} 50%{--jx:0px;--jy:1.5px}
+    75%{--jx:-2px;--jy:-1px} 100%{--jx:0px;--jy:0px} }
+  #heroDeck .deck-card img{ width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+  /* sfumatura nella parte bassa della card */
+  #heroDeck .deck-inner::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, transparent 40%, rgba(4,21,14,.55) 72%, rgba(4,21,14,.92) 100%); }
+  /* riquadro oro in alto a destra col nome auto */
+  #heroDeck .deck-badge{ position:absolute; top:10px; right:10px; z-index:2; pointer-events:none;
+    font-family:'Jost',sans-serif; font-size:11px; font-weight:600; letter-spacing:.02em; color:#1a1304;
+    padding:5px 11px; border-radius:999px; background:linear-gradient(135deg,#F0D78A,#C9A24B 55%,#8A6420);
+    border:1px solid rgba(255,247,224,.5); box-shadow:0 4px 12px -3px rgba(0,0,0,.6); white-space:nowrap; }
+  #heroDeck .deck-caption{ background:radial-gradient(60% 70% at 50% 50%, rgba(4,21,14,.55), transparent 75%); }
+  @media (max-width:1023px){ #heroDeck .deck-card{ width:168px; } #heroDeck .deck-badge{ font-size:10px; padding:4px 9px; }
+    #heroDeck .deck-card.is-zoom .deck-inner{ --sc:1.24; } #heroDeck .deck-mask{ padding-top:2.4rem; padding-bottom:2.4rem; } }
+  @media (prefers-reduced-motion:reduce){ #heroDeck .deck-track{ animation:none; } #heroDeck .deck-card.is-zoom .deck-inner{ animation:none; --sc:1.12; } }
+  @keyframes hintPulse{ 0%,100%{opacity:.5} 50%{opacity:1} }
+  #muteBtn{ transition: background-color .25s, border-color .25s, color .25s; cursor:pointer; }
+  #muteBtn .ico-on{ display:block; } #muteBtn .ico-off{ display:none; }
+  #muteBtn.is-muted .ico-on{ display:none; } #muteBtn.is-muted .ico-off{ display:block; }
+
+  /* keyboard focus — visible gold ring for accessibility */
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible, iframe:focus-visible {
+    outline: 2px solid #F0D78A;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  /* when navigating by keyboard, reveal the link underline too */
+  .link-underline:focus-visible::after { width: 100%; }
+
+  /* ===================== SCROLL-REACTIVE LAYER (fiducia → footer) ===================== */
+  /* parole giganti di sfondo che scorrono col cursore */
+  .bgword{ position:absolute; left:50%; top:50%; z-index:0;
+    transform:translate(-50%,-50%);
+    font-family:'Bodoni Moda',serif; font-weight:700; text-transform:uppercase;
+    font-size:clamp(4.5rem,21vw,21rem); line-height:.78; letter-spacing:-.025em;
+    white-space:nowrap; pointer-events:none; user-select:none; max-width:none;
+    -webkit-text-stroke:1.5px rgba(201,162,75,.14); color:transparent;
+    will-change:transform; }
+  .bgword.fill{ -webkit-text-stroke:0; color:rgba(201,162,75,.045); }
+  /* su mobile le parole giganti vengono nascoste: troppo strette per restare leggibili e centrate */
+  @media (max-width:700px){
+    .bgword{ display:none; }
+  }
+
+  /* ===================== CAROSELLI MOBILE (≤639px) =====================
+     Su mobile le griglie a più colonne (6 card Fiducia, 3 recensioni, 4 video)
+     diventano caroselli orizzontali con snap: meno scroll verticale, meno
+     ripetitività e si intravede sempre la card successiva (invito allo swipe). */
+  .m-hint{ display:none; }
+  @media (max-width:639px){
+    .m-carousel{
+      display:flex !important;
+      flex-wrap:nowrap;
+      gap:1rem;
+      grid-template-columns:none !important;   /* annulla le 4 colonne inline dei video */
+      overflow-x:auto; overflow-y:hidden;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scroll-padding:0 1.25rem;
+      padding:.5rem 1.25rem 1.25rem;
+      margin-inline:-1.25rem;                  /* il carosello arriva ai bordi schermo */
+      scrollbar-width:none;
+    }
+    .m-carousel::-webkit-scrollbar{ display:none; }
+    .m-carousel > *{
+      scroll-snap-align:center;
+      flex:0 0 84%;
+      max-width:84%;
+    }
+    .m-carousel-video > *{ flex-basis:62%; max-width:62%; }  /* 9:16: più stretti, se ne vede più d'uno */
+
+    /* dentro al carosello niente entrata 3D "cine" (in conflitto con lo scroll orizzontale) */
+    .m-carousel .cine{ opacity:1 !important; transform:none !important; }
+    /* card Fiducia più compatte su mobile */
+    #valori .m-carousel .group{ padding:1.75rem; }
+
+    .m-hint{ display:flex; align-items:center; justify-content:center; gap:.6rem; }
+  }
+
+  /* ===================== SEZIONE "ENTRA DA ELEGAUTO" — MOBILE =====================
+     Da smartphone: titolo e didascalia più vicini, video verticale quasi a tutto
+     schermo che resta centrato, e pannello vetture spostato in basso (sotto al video). */
+  @media (max-width:767px){
+    /* titolo (sopra) e didascalia (sotto) meno distanti: li avviciniamo al video centrale */
+    [data-hero]{
+      padding-top:10vh !important;
+      padding-bottom:12vh !important;
+    }
+    /* il pannello di scelta vetture va in fondo, a tutta larghezza e centrato */
+    #expandVid [data-panel]{
+      left:1.1rem !important;
+      right:1.1rem !important;
+      top:auto !important;
+      bottom:2.8vh !important;
+      transform:none !important;
+      max-width:none !important;
+      text-align:center;
+      z-index:14;
+    }
+    #expandVid [data-panel] > .flex.gap-3{   /* tab categorie centrate, vanno a capo se serve */
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:.85rem !important;
+    }
+    #expandVid [data-panel] [data-cat-title]{ font-size:6.2vw; margin-top:.2rem; }
+    #expandVid [data-panel] [data-name]{ font-size:1.05rem; margin-top:.35rem; }
+    #expandVid [data-panel] [data-specs]{ font-size:.85rem; }
+    #expandVid [data-panel] [data-nav]{ justify-content:center; margin-top:.9rem; }
+    /* pedale + contagiri: tolti su mobile, lo spazio in basso è del pannello vetture */
+    #pedalRig{ display:none !important; }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,*::before,*::after { animation:none !important; transition:none !important; }
+    .reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1 !important;transform:none !important;}
+    .luxe-rise{opacity:1 !important;transform:none !important;filter:none !important;}
+    .cine{opacity:1 !important;transform:none !important;}
+    .luxe-line{width:min(420px,60vw) !important;}
+    .char{opacity:1 !important;transform:none !important;}
+    .bgword{ opacity:.45; }
+  }
+</style>
+</head>
+
+<body class="font-sans text-ivory antialiased">
+<div id="scrollbar" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="mt-4 flex items-center justify-between rounded-full border border-gold/20 bg-emerald-950/40 px-5 py-3 backdrop-blur-xl transition-all duration-500">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="font-script text-2xl md:text-3xl font-semibold gold-text leading-none">ElegAuto</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-9 text-sm tracking-wide text-mute">
+        <a href="#valori" class="link-underline hover:text-ivory transition">Perché noi</a>
+        <a href="#esperienza" class="link-underline hover:text-ivory transition">L'esperienza</a>
+        <a href="#chisiamo" class="link-underline hover:text-ivory transition">Chi siamo</a>
+        <a href="#recensioni" class="link-underline hover:text-ivory transition">Recensioni</a>
+        <a href="#contatti" class="link-underline hover:text-ivory transition">Contatti</a>
+      </nav>
+      <div class="hidden sm:inline-flex items-center gap-2">
+        <a href="tel:+393460176075" class="btn-gold inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiama ora
+        </a>
+        <a href="https://wa.me/393460176075" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gold/40 text-gold hover:bg-gold/10 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zm-4.5 4.5c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.62 2.62 1.03 3.16.83 3.73.77.57-.05 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.08-.13-.29-.21-.6-.36-.31-.16-1.84-.91-2.12-1.01-.29-.1-.5-.16-.71.16-.21.31-.81 1.01-1 1.22-.18.21-.37.23-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.54-1.84-1.73-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.15-.19.2-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.7-1.7-.96-2.32-.25-.61-.51-.53-.7-.54-.18-.01-.39-.01-.6-.01z"/></svg>
+        </a>
+      </div>
+      <button id="burger" aria-label="Apri menu" class="md:hidden text-gold p-1">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden mx-5 mt-2 rounded-3xl border border-gold/20 bg-emerald-950/90 backdrop-blur-xl p-6">
+    <nav class="flex flex-col gap-4 text-lg">
+      <a href="#valori" class="mobile-link text-mute hover:text-gold">Perché noi</a>
+      <a href="#esperienza" class="mobile-link text-mute hover:text-gold">L'esperienza</a>
+      <a href="#chisiamo" class="mobile-link text-mute hover:text-gold">Chi siamo</a>
+      <a href="#recensioni" class="mobile-link text-mute hover:text-gold">Recensioni</a>
+      <a href="#contatti" class="mobile-link text-mute hover:text-gold">Contatti</a>
+      <div class="mt-2 flex items-center gap-3">
+        <a href="tel:+393460176075" class="btn-gold inline-flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-3.5 font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiama ora
+        </a>
+        <a href="https://wa.me/393460176075" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp" class="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-full border border-gold/40 text-gold hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zm-4.5 4.5c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.62 2.62 1.03 3.16.83 3.73.77.57-.05 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.08-.13-.29-.21-.6-.36-.31-.16-1.84-.91-2.12-1.01-.29-.1-.5-.16-.71.16-.21.31-.81 1.01-1 1.22-.18.21-.37.23-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.54-1.84-1.73-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.15-.19.2-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.7-1.7-.96-2.32-.25-.61-.51-.53-.7-.54-.18-.01-.39-.01-.6-.01z"/></svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- background layers — la foto cliccata finisce qui (default: Golf R-Line, faro) -->
+  <img id="heroBg" src="assets/img/car-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(4,21,14,.58) 0%, rgba(4,21,14,.8) 100%), radial-gradient(120% 90% at 50% 0%, rgba(15,82,54,.55) 0%, rgba(4,21,14,.78) 60%, #04150E 100%);"></div>
+  <div class="absolute inset-0 opacity-[.5]" style="background:radial-gradient(60% 50% at 70% 60%, rgba(201,162,75,.18), transparent 70%);"></div>
+  <!-- ghost word -->
+  <div class="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
+    <span class="ghost font-display font-bold tracking-tight leading-none text-[28vw] md:text-[20vw]" data-scale="1.4">ELEG</span>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-5 md:px-8 w-full pt-28 pb-20">
+    <p class="text-gold/80 tracking-[.55em] text-xs md:text-sm mb-6" id="kicker" style="opacity:0">SALONE D'AUTO · MAZZARINO (CL)</p>
+
+    <h1 class="font-display font-bold leading-[.92] text-[15vw] sm:text-[12vw] md:text-[8.5vw] lg:text-[7.5vw]">
+      <span id="line1" class="block text-ivory"></span>
+      <span id="line2" class="block gold-text gold-shine italic font-script font-semibold"></span>
+    </h1>
+
+    <div class="mt-8 max-w-xl">
+      <p class="reveal text-mute text-lg md:text-xl leading-relaxed">Usato garantito e controllato. Auto impeccabili, scelte una per una. Dalla trattativa alla consegna — ovunque tu sia — con la massima trasparenza.</p>
+      <div class="reveal mt-9 flex flex-wrap items-center gap-4" data-delay="1">
+        <a href="tel:+393460176075" class="btn-gold inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiamaci ora
+        </a>
+        <a href="#esperienza" class="inline-flex items-center gap-3 rounded-full border border-gold/40 px-7 py-4 text-base text-ivory hover:bg-gold/10 transition">
+          Scopri l'esperienza
+          <span class="text-gold">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Hero vetrina: foto auto reali che scorrono come card (clicca per ingrandire) ===== -->
+    <div id="heroDeck" class="relative z-10 mx-auto mt-14 w-full max-w-md lg:mt-0 lg:absolute lg:right-0 lg:top-[52%] lg:w-[46%] lg:max-w-none">
+      <div class="deck-mask overflow-hidden py-5">
+        <div class="deck-track">
+          <figure class="deck-card"><img src="assets/img/car-18.jpg" alt="Fiat Panda — ElegAuto"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-3.jpg" alt="Fiat 500e — ElegAuto"><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-22.jpg" alt="Audi A3 — ElegAuto"><figcaption class="deck-badge">Audi A3</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-20.jpg" alt="Abarth 500 — ElegAuto" loading="lazy"><figcaption class="deck-badge">Abarth 500</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-6.jpg" alt="Peugeot 3008 — ElegAuto" loading="lazy"><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-11.jpg" alt="Fiat Panda — ElegAuto" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-17.jpg" alt="Volkswagen Golf — ElegAuto" loading="lazy"><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-10.jpg" alt="Alfa Romeo Giulietta — ElegAuto" loading="lazy"><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
+          <figure class="deck-card"><img src="assets/img/car-7.jpg" alt="Jeep Compass — ElegAuto" loading="lazy"><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
+          <!-- duplicato per loop continuo verso destra -->
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-18.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-3.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-22.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Audi A3</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-20.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Abarth 500</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-6.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-11.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-17.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-10.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-7.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
+        </div>
+      </div>
+      <!-- centered overlay caption -->
+      <div class="deck-caption pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-4">
+        <span class="text-center">
+          <span class="block font-script italic gold-text gold-shine text-3xl md:text-4xl leading-none">La nostra selezione</span>
+          <span class="block text-[10px] md:text-[11px] tracking-[.42em] text-ivory/80 mt-3">USATO GARANTITO · PRONTA CONSEGNA</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll cue -->
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-gold/70">
+    <span class="text-[11px] tracking-[.3em]">SCORRI</span>
+    <span class="block w-px h-10 bg-gradient-to-b from-gold/70 to-transparent animate-pulse"></span>
+  </div>
+</section>
+
+<!-- ===================== SCROLL-EXPAND VIDEO ===================== -->
+<section id="expandVid" class="relative bg-emerald-950" style="height:300vh">
+  <div class="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0" style="background:radial-gradient(125% 95% at 50% 64%, #0F5236 0%, #06241A 46%, #04150E 100%)"></div>
+    <!-- blend band: fonde la cucitura con l'hero scuro (#04150E) — niente più stacco netto -->
+    <div class="absolute pointer-events-none" style="left:0;right:0;top:0;height:11rem;z-index:1;background:linear-gradient(180deg,#04150E 0%, rgba(4,21,14,.55) 45%, rgba(4,21,14,0) 100%)"></div>
+    <!-- silk "telo" backdrop: undulating cloth of emerald & gold whose folds drift toward the cursor -->
+    <canvas id="silkBg" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+    <!-- depth layers so the scene never reads flat: breathing gold bloom, soft side light, fine vignette -->
+    <div class="absolute inset-0 pointer-events-none orb" style="background:radial-gradient(46% 40% at 32% 28%, rgba(201,162,75,.16), transparent 70%)"></div>
+    <div class="absolute inset-0 pointer-events-none drift-2" style="background:radial-gradient(40% 38% at 78% 74%, rgba(15,82,54,.55), transparent 72%)"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,.45) 100%)"></div>
+    <div class="absolute inset-0 pointer-events-none" style="opacity:.5;background-image:radial-gradient(rgba(246,241,228,.05) 1px, transparent 1px);background-size:3px 3px"></div>
+    <svg id="hexInteractive" class="absolute inset-0 w-full h-full" style="opacity:0" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+
+    <!-- ambient motion during the move: drifting gold dust + slow light sheen (replaces the old streak lines) -->
+    <div data-streaks class="absolute inset-0 pointer-events-none overflow-hidden" style="opacity:0">
+      <div class="sheen-sweep"></div>
+      <div class="dust" style="left:14%;top:64%;width:5px;height:5px;animation-duration:9s;animation-delay:-1s"></div>
+      <div class="dust" style="left:22%;top:78%;width:3px;height:3px;animation-duration:11s;animation-delay:-4s"></div>
+      <div class="dust" style="left:31%;top:58%;width:6px;height:6px;animation-duration:10s;animation-delay:-2.5s"></div>
+      <div class="dust" style="left:38%;top:82%;width:4px;height:4px;animation-duration:13s;animation-delay:-6s"></div>
+      <div class="dust" style="left:46%;top:70%;width:3px;height:3px;animation-duration:8.5s;animation-delay:-3s"></div>
+      <div class="dust" style="left:55%;top:86%;width:5px;height:5px;animation-duration:12s;animation-delay:-7.5s"></div>
+      <div class="dust" style="left:63%;top:60%;width:4px;height:4px;animation-duration:10.5s;animation-delay:-1.8s"></div>
+      <div class="dust" style="left:71%;top:80%;width:3px;height:3px;animation-duration:14s;animation-delay:-5s"></div>
+      <div class="dust" style="left:80%;top:66%;width:6px;height:6px;animation-duration:9.5s;animation-delay:-8s"></div>
+      <div class="dust" style="left:88%;top:84%;width:4px;height:4px;animation-duration:11.5s;animation-delay:-2s"></div>
+    </div>
+
+    <!-- hero title (phase 1) — titolo in alto, didascalia in basso, vetrina al centro -->
+    <div data-hero class="absolute inset-0 z-20 flex flex-col items-center justify-between text-center pointer-events-none px-6" style="text-shadow:0 6px 40px rgba(0,0,0,.65);padding-top:4vh;padding-bottom:9vh">
+      <div class="flex flex-col items-center">
+        <span class="luxe-rise inline-flex items-center gap-3 mb-4 text-gold/70 tracking-[.5em] text-[10px] md:text-[11px] uppercase">
+          <span class="h-px w-7 bg-gold/40"></span>Mazzarino · Salone Auto<span class="h-px w-7 bg-gold/40"></span>
+        </span>
+        <h2 class="luxe-rise d1 font-display font-bold leading-[0.95] text-[8.5vw] md:text-[6.2vw] flex flex-wrap justify-center gap-x-5">
+          <span data-expand-word="-1" class="text-ivory">Entra da</span>
+          <span data-expand-word="1" class="gold-text gold-shine">ElegAuto</span>
+        </h2>
+        <div class="luxe-line d1"></div>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="luxe-rise d2 max-w-[22ch] md:max-w-[40ch] font-script italic text-[1.35rem] md:text-[2rem] leading-[1.2] text-ivory/95">
+          Non lasciare che i tuoi sogni rimangano <span class="not-italic font-display gold-text gold-shine">parcheggiati</span>.
+        </p>
+        <p data-expand-fade class="luxe-rise d3 mt-5 inline-flex flex-col items-center gap-2 text-gold/70 tracking-[.3em] text-[11px]">
+          SCORRI PER ENTRARE
+          <svg class="w-4 h-4 text-gold/60 animate-bounce" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </p>
+      </div>
+    </div>
+
+    <!-- left category panel (final, interactive) -->
+    <div data-panel class="absolute left-[6%] top-1/2 -translate-y-1/2 text-left max-w-[46%] z-[12]" style="opacity:0">
+      <div class="flex gap-3 mb-6 pointer-events-auto">
+        <button class="cat-tab inline-flex items-center gap-2 rounded-full border border-gold/30 bg-emerald-950/70 backdrop-blur px-4 py-2 text-sm text-ivory cursor-pointer transition" data-cat="showroom">
+          <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.5-2.5 4-5.7 4-9s-1.5-6.5-4-9m0 18c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9M3.5 9h17M3.5 15h17"/></svg>
+          Showroom 360°
+        </button>
+        <button class="cat-tab inline-flex items-center gap-2 rounded-full border border-gold/30 bg-emerald-950/70 backdrop-blur px-4 py-2 text-sm text-ivory cursor-pointer transition" data-cat="vetture">
+          <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m11.48 3.5 2.5 5 5.5.8-4 3.9.95 5.5L11.48 22l-4.95-2.6.95-5.5-4-3.9 5.5-.8z"/></svg>
+          Vetture selezionate
+        </button>
+      </div>
+      <p data-super class="text-gold/70 tracking-[.4em] text-xs md:text-sm mb-2 min-h-[1em]"></p>
+      <h2 data-cat-title class="font-display font-bold leading-[1.02] text-[7vw] md:text-[3.4vw] text-ivory"></h2>
+      <h3 data-name class="font-display font-semibold text-xl md:text-2xl gold-text gold-shine mt-3"></h3>
+      <p data-specs class="mt-2 text-ivory/90 text-sm md:text-lg"></p>
+      <div data-nav class="flex items-center gap-4 mt-7 pointer-events-auto">
+        <button data-prev aria-label="Precedente" class="w-12 h-12 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10 transition cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <span data-idx class="text-mute text-sm tracking-widest"></span>
+        <button data-next aria-label="Successivo" class="w-12 h-12 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10 transition cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- screen: expands big, slides right, becomes the clean in-dash display -->
+    <div id="expandBox" class="relative z-10 overflow-hidden pointer-events-none will-change-[width,height,transform]" style="width:208px;height:392px;border-radius:2rem;border:1px solid rgba(201,162,75,.2);box-shadow:0 30px 90px -20px rgba(0,0,0,.7)">
+      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="assets/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="auto"></video>
+      <div data-expand-veil class="absolute inset-0" style="background:rgba(4,21,14,.3)"></div>
+      <div id="phoneNotch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10 flex items-center justify-center gap-2" style="opacity:0">
+        <span class="block w-2 h-2 rounded-full" style="background:radial-gradient(circle at 35% 35%, #2a4a3a, #04130c)"></span>
+      </div>
+    </div>
+
+    <!-- ===== Pedale acceleratore + contagiri (solo Sportiva tedesca) — in basso, fuso con gli esagoni ===== -->
+    <div id="pedalRig" class="absolute left-[6%] bottom-[6%] z-[13] hidden pointer-events-auto" style="opacity:0">
+      <div class="pedal-well" aria-hidden="true"></div>
+      <div id="pedalGlowDiv" aria-hidden="true"></div>
+      <div class="relative z-[1] flex flex-col items-center gap-0">
+        <!-- live tachometer -->
+        <div class="shrink-0">
+          <div class="relative" style="width:212px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))">
+            <svg viewBox="0 0 300 200" class="w-full h-auto" role="img" aria-label="Contagiri Mercedes-AMG A45 4MATIC">
+              <defs>
+                <radialGradient id="tachHub" cx="50%" cy="38%" r="62%"><stop offset="0" stop-color="#F0D78A"/><stop offset="1" stop-color="#8A6420"/></radialGradient>
+              </defs>
+              <path id="tachTrack" d="M40 175 A115 115 0 0 1 260 175" fill="none" stroke="#0c3826" stroke-width="13" stroke-linecap="round"/>
+              <path id="tachRed" d="M40 175 A115 115 0 0 1 260 175" fill="none" stroke="#E0463B" stroke-width="13"/>
+              <g id="tachTicks"></g>
+              <g id="tachNeedle"><line x1="150" y1="175" x2="150" y2="82" stroke="#F6F1E4" stroke-width="3.5" stroke-linecap="round"/></g>
+              <circle cx="150" cy="175" r="11" fill="url(#tachHub)" stroke="#04150E" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="text-center -mt-2 relative z-[2]">
+            <span id="rpmNum" class="font-display text-3xl gold-text leading-none">800</span><span class="text-gold text-[11px] ml-1">RPM</span>
+          </div>
+        </div>
+        <!-- gas pedal (press / hold) — piccolo, sotto il contagiri; pad dritto, senza asta/fiamma, si schiaccia in dentro -->
+        <button id="pedalBtn" type="button" class="-mt-1 shrink-0" aria-label="Premi e tieni premuto l'acceleratore per sentire il motore">
+          <svg viewBox="0 0 200 170" class="w-full h-auto" aria-hidden="true">
+            <defs>
+              <linearGradient id="pedPad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23282c"/><stop offset="1" stop-color="#05080b"/></linearGradient>
+              <linearGradient id="pedGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0D78A"/><stop offset="1" stop-color="#8A6420"/></linearGradient>
+              <filter id="pedShadow" x="-40%" y="-30%" width="180%" height="170%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000" flood-opacity=".5"/></filter>
+            </defs>
+            <g id="pedalGroup" filter="url(#pedShadow)">
+              <rect id="pedalPad" x="40" y="20" width="120" height="130" rx="18" fill="url(#pedPad)" stroke="#C9A24B" stroke-width="2"/>
+              <g stroke="#2a3034" stroke-width="6" stroke-linecap="round">
+                <line x1="58" y1="58" x2="142" y2="58"/><line x1="58" y1="76" x2="142" y2="76"/>
+                <line x1="58" y1="94" x2="142" y2="94"/><line x1="58" y1="112" x2="142" y2="112"/>
+                <line x1="58" y1="130" x2="142" y2="130"/>
+              </g>
+              <rect x="71" y="30" width="58" height="17" rx="4" fill="url(#pedGold)"/>
+              <text x="100" y="42.6" text-anchor="middle" font-family="Jost,sans-serif" font-size="11.5" font-weight="700" fill="#04150E">A45</text>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <p id="pedalHint" class="mt-2 text-center text-gold/85 text-[10px] tracking-[.28em]">PREMI · ASCOLTA IL MOTORE</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST MARQUEE ===================== -->
+<section class="relative border-y border-gold/10 bg-emerald-950 py-5 overflow-hidden">
+  <div class="marquee text-gold/40 font-display italic text-xl md:text-2xl">
+    <div class="flex gap-12 pr-12">
+      <span>Usato Garantito</span><span class="text-gold/20">◆</span>
+      <span>Controllo 360°</span><span class="text-gold/20">◆</span>
+      <span>Finanziamenti su misura</span><span class="text-gold/20">◆</span>
+      <span>Test Drive</span><span class="text-gold/20">◆</span>
+      <span>Consegna ovunque</span><span class="text-gold/20">◆</span>
+      <span>Trasparenza totale</span><span class="text-gold/20">◆</span>
+    </div>
+    <div class="flex gap-12 pr-12" aria-hidden="true">
+      <span>Usato Garantito</span><span class="text-gold/20">◆</span>
+      <span>Controllo 360°</span><span class="text-gold/20">◆</span>
+      <span>Finanziamenti su misura</span><span class="text-gold/20">◆</span>
+      <span>Test Drive</span><span class="text-gold/20">◆</span>
+      <span>Consegna ovunque</span><span class="text-gold/20">◆</span>
+      <span>Trasparenza totale</span><span class="text-gold/20">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KINETIC BAND ===================== -->
+<section class="relative overflow-hidden bg-emerald-950 py-20 md:py-28">
+  <!-- horizontal readable marquee -->
+  <div class="marquee items-center font-display font-bold leading-none text-[11vw] md:text-[8vw]" data-parallax="0">
+    <div class="flex items-center gap-8 pr-8">
+      <span class="gold-text gold-shine">ELEGANZA</span><span class="text-gold/30">◆</span>
+      <span class="ghost">CURA</span><span class="text-gold/30">◆</span>
+      <span class="text-ivory">DISTINZIONE</span><span class="text-gold/30">◆</span>
+    </div>
+    <div class="flex items-center gap-8 pr-8" aria-hidden="true">
+      <span class="gold-text gold-shine">ELEGANZA</span><span class="text-gold/30">◆</span>
+      <span class="ghost">CURA</span><span class="text-gold/30">◆</span>
+      <span class="text-ivory">DISTINZIONE</span><span class="text-gold/30">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALORI ===================== -->
+<section id="valori" class="relative py-28 md:py-36 bg-emerald-950 overflow-hidden">
+  <div class="sweep"></div>
+  <div class="absolute inset-0 opacity-40" style="background:radial-gradient(50% 50% at 80% 10%, rgba(201,162,75,.10), transparent)"></div>
+  <div class="orb absolute -right-24 top-10 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background:radial-gradient(circle,rgba(201,162,75,.12),transparent 70%)"></div>
+  <div class="bgword fill" style="top:16%" data-driftx="260" aria-hidden="true">Fiducia</div>
+  <div class="relative z-[1] mx-auto max-w-7xl px-5 md:px-8">
+    <div class="max-w-2xl">
+      <p class="reveal text-gold/70 tracking-[.4em] text-xs mb-5">PERCHÉ ELEGAUTO</p>
+      <h2 class="reveal font-display text-4xl md:text-6xl font-semibold leading-tight">La fiducia è il nostro <span class="gold-text gold-shine">valore più importante.</span></h2>
+      <p class="reveal mt-6 text-mute text-lg leading-relaxed" data-delay="1">Gestiamo ogni fase dell'acquisto con cura artigianale. Niente sorprese, niente difetti nascosti: solo auto impeccabili e clienti che tornano.</p>
+    </div>
+
+    <div class="m-carousel mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" style="perspective:1100px" data-cine-group="fiducia">
+      <!-- card -->
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="0">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Usato garantito</h3>
+        <p class="text-mute leading-relaxed">Ogni vettura è controllata in ogni dettaglio prima di entrare in salone. Garanzia inclusa, storia trasparente.</p>
+      </div>
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="1">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Finanziamenti su misura</h3>
+        <p class="text-mute leading-relaxed">Soluzioni di pagamento flessibili e chiare, costruite sulle tue esigenze. Ti seguiamo passo dopo passo.</p>
+      </div>
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="2">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-6m6 0V7.5m0 11.25h-2.25m-9-9V9a.75.75 0 0 0-.75-.75H3.375m0 0V6.375c0-.621.504-1.125 1.125-1.125h9.75c.621 0 1.125.504 1.125 1.125V9.75m-12 0h12"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Consegna ovunque</h3>
+        <p class="text-mute leading-relaxed">Hai clienti che vengono da lontano? Ti portiamo l'auto direttamente sul posto di lavoro o a casa.</p>
+      </div>
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="3">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Test drive</h3>
+        <p class="text-mute leading-relaxed">Provala prima di decidere. Vogliamo che tu ti senta sicuro al 100% della tua scelta.</p>
+      </div>
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="4">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Trasparenza totale</h3>
+        <p class="text-mute leading-relaxed">Ti raccontiamo tutto della vettura, pregi e storia. La chiarezza è ciò che ci fa scegliere.</p>
+      </div>
+      <div class="cine group rounded-3xl border border-gold/15 bg-emerald-900/40 p-8 hover:border-gold/50 transition-all duration-500 hover:-translate-y-1" data-cine="unfold" data-cine-i="5">
+        <div class="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-gold mb-6 group-hover:bg-gold/10 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Auto impeccabili</h3>
+        <p class="text-mute leading-relaxed">Selezioniamo solo vetture all'altezza del nostro nome. Eleganza, cura, distinzione — su ogni dettaglio.</p>
+      </div>
+    </div>
+    <p class="m-hint text-mute text-[11px] tracking-[.3em] mt-5"><span class="text-gold">‹‹</span> SCORRI <span class="text-gold">››</span></p>
+  </div>
+</section>
+
+<!-- ===================== ESPERIENZA / SCROLL ZOOM ===================== -->
+<section id="esperienza" class="relative py-28 md:py-40 overflow-hidden" style="background:linear-gradient(180deg,#04150E,#06241A 50%,#04150E)">
+  <div class="bgword fill" style="top:11%" data-driftx="-230" aria-hidden="true">Dettagli</div>
+  <div class="relative z-[1] mx-auto max-w-7xl px-5 md:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="reveal text-gold/70 tracking-[.4em] text-xs mb-5">OGNI DETTAGLIO CONTA</p>
+      <h2 class="reveal font-display text-4xl md:text-6xl font-semibold leading-tight">L'eccellenza vive <span class="gold-text italic font-script">nei particolari</span></h2>
+    </div>
+
+    <!-- detail rows: image (svg detail) + text, alternating -->
+    <div class="space-y-28">
+
+      <!-- row 1: wheel -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-l relative exp-pcol">
+          <span class="ghost exp-num absolute -top-14 -left-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none">01</span>
+          <div class="exp-parax">
+          <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
+            <img src="assets/img/exp-cerchio.jpg" alt="Cerchio in lega AMG con pinza freno rossa" class="exp-photo" loading="lazy" decoding="async">
+            <span class="exp-sheen"></span>
+            <span class="exp-glare"></span>
+            <div class="hotspot" style="top:42%;left:52%"><span class="hs-dot"></span><span class="hs-label">Cerchi in lega</span></div>
+            <div class="hotspot" style="top:60%;left:66%"><span class="hs-dot"></span><span class="hs-label">Freni controllati</span></div>
+          </div>
+          </div>
+        </div>
+        <div class="reveal-r">
+          <h3 class="exp-head font-display text-3xl md:text-4xl mb-4">Cerchi & assetto</h3>
+          <p class="text-mute text-lg leading-relaxed">Controlliamo pneumatici, freni e geometrie. Ogni vettura arriva da te pronta a esprimere il meglio, su strada come nello sguardo.</p>
+        </div>
+      </div>
+
+      <!-- row 2: engine -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-r md:order-2 relative exp-pcol">
+          <span class="ghost exp-num exp-num-r absolute -top-14 -right-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none text-right w-full">02</span>
+          <div class="exp-parax">
+          <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
+            <img src="assets/img/exp-motore.jpg" alt="Motore Mercedes-AMG nel vano sotto il cofano" class="exp-photo" loading="lazy" decoding="async">
+            <span class="exp-sheen"></span>
+            <span class="exp-glare"></span>
+            <div class="hotspot" style="top:42%;left:48%"><span class="hs-dot"></span><span class="hs-label">Motore verificato</span></div>
+            <div class="hotspot" style="top:64%;left:30%"><span class="hs-dot"></span><span class="hs-label">Tagliandi in regola</span></div>
+          </div>
+          </div>
+        </div>
+        <div class="reveal-l md:order-1">
+          <h3 class="exp-head font-display text-3xl md:text-4xl mb-4">Cuore meccanico</h3>
+          <p class="text-mute text-lg leading-relaxed">Motore e componenti verificati a fondo. Nessun difetto nascosto: solo affidabilità certificata e la serenità di guidare senza pensieri.</p>
+        </div>
+      </div>
+
+      <!-- row 3: headlight -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-l relative exp-pcol">
+          <span class="ghost exp-num absolute -top-14 -left-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none">03</span>
+          <div class="exp-parax">
+          <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
+            <img src="assets/img/exp-carrozzeria.jpg" alt="Faro full LED e carrozzeria opaca" class="exp-photo" loading="lazy" decoding="async">
+            <span class="exp-sheen"></span>
+            <span class="exp-glare"></span>
+            <div class="hotspot" style="top:54%;left:40%"><span class="hs-dot"></span><span class="hs-label">Fari impeccabili</span></div>
+            <div class="hotspot" style="top:22%;left:62%"><span class="hs-dot"></span><span class="hs-label">Vernice perfetta</span></div>
+          </div>
+          </div>
+        </div>
+        <div class="reveal-r">
+          <h3 class="exp-head font-display text-3xl md:text-4xl mb-4">Sguardo & carrozzeria</h3>
+          <p class="text-mute text-lg leading-relaxed">Fari, vernice e linee: ispezionati uno a uno. Perché la prima impressione conta, e un'auto ElegAuto si riconosce a colpo d'occhio.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TACHIMETRO + PERCORSO ===================== -->
+<section id="motionDuo" class="relative py-28 md:py-36 overflow-hidden" style="background:linear-gradient(180deg,#04150E,#06241A)">
+  <div class="bgword fill" style="top:50%" data-driftx="200" aria-hidden="true">Ovunque</div>
+  <div id="motionRow" class="relative z-[1] mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- TACHIMETRO -->
+    <div class="reveal-l text-center">
+      <p class="text-gold/70 tracking-[.4em] text-xs mb-5">FIDUCIA AL MASSIMO DEI GIRI</p>
+      <h3 class="font-display text-3xl md:text-5xl font-semibold mb-10">Soddisfazione <span class="gold-text">al 100%</span></h3>
+      <div class="relative inline-block">
+        <svg viewBox="0 0 300 210" class="w-[320px] max-w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="Tachimetro soddisfazione">
+          <defs>
+            <linearGradient id="goldGauge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8A6420"/><stop offset=".5" stop-color="#F0D78A"/><stop offset="1" stop-color="#C9A24B"/>
+            </linearGradient>
+          </defs>
+          <path d="M40 170 A110 110 0 0 1 260 170" fill="none" stroke="#0f5236" stroke-width="14" stroke-linecap="round" opacity=".5"/>
+          <path id="gaugeArc" d="M40 170 A110 110 0 0 1 260 170" fill="none" stroke="url(#goldGauge)" stroke-width="14" stroke-linecap="round" stroke-dasharray="345.6" stroke-dashoffset="345.6"/>
+          <g id="gaugeNeedle" transform="rotate(-90 150 170)">
+            <line x1="150" y1="170" x2="150" y2="78" stroke="#F0D78A" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="150" cy="170" r="10" fill="#C9A24B"/>
+          </g>
+        </svg>
+      </div>
+      <div class="-mt-2"><span id="gaugeNum" class="font-display text-5xl gold-text">0</span><span class="text-gold text-2xl">%</span></div>
+      <p class="text-mute mt-2">Clienti che ci consigliano</p>
+    </div>
+
+    <!-- PERCORSO -->
+    <div class="reveal-r">
+      <p class="text-gold/70 tracking-[.4em] text-xs mb-5">OVUNQUE TU SIA</p>
+      <h3 class="font-display text-3xl md:text-5xl font-semibold mb-8">Dal nostro salone <span class="gold-text italic font-script">fino a casa tua</span></h3>
+      <div class="relative rounded-3xl border border-gold/15 bg-emerald-900/30 p-6">
+        <svg id="routeSvg" viewBox="0 0 500 300" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="Percorso di consegna">
+          <defs>
+            <linearGradient id="goldRoute" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#8A6420"/><stop offset=".5" stop-color="#F0D78A"/><stop offset="1" stop-color="#C9A24B"/>
+            </linearGradient>
+          </defs>
+          <path id="routeBase" d="M60 250 C140 250 130 150 220 150 C310 150 300 70 440 60" fill="none" stroke="#0f5236" stroke-width="3" stroke-dasharray="6 8" opacity=".6"/>
+          <path id="routeLine" d="M60 250 C140 250 130 150 220 150 C310 150 300 70 440 60" fill="none" stroke="url(#goldRoute)" stroke-width="4" stroke-linecap="round"/>
+          <!-- salone pin -->
+          <g>
+            <circle cx="60" cy="250" r="20" fill="#0a3d2a" stroke="#C9A24B" stroke-width="2"/>
+            <path d="M52 252 v-8 l8-6 8 6 v8 z" fill="#C9A24B"/>
+            <text x="60" y="288" text-anchor="middle" fill="#C9C3B2" font-size="13" font-family="Jost,sans-serif">Salone</text>
+          </g>
+          <!-- casa pin -->
+          <g>
+            <circle cx="440" cy="60" r="20" fill="#0a3d2a" stroke="#C9A24B" stroke-width="2"/>
+            <path d="M432 62 v-7 l8-7 8 7 v7 z M436 55 h8 v7 h-8 z" fill="#C9A24B"/>
+            <text x="440" y="98" text-anchor="middle" fill="#C9C3B2" font-size="13" font-family="Jost,sans-serif">Casa tua</text>
+          </g>
+          <!-- moving car -->
+          <g id="routeCar">
+            <circle r="13" fill="#04150E" stroke="#C9A24B" stroke-width="2"/>
+            <path d="M-8 2 q2 -8 8 -8 q6 0 8 8 z" fill="#F0D78A"/>
+          </g>
+        </svg>
+        <p class="text-mute text-sm mt-2">Gestiamo ogni fase: dalla scelta alla consegna, anche a chi viene da lontano.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== CHI SIAMO ===================== -->
+<section id="chisiamo" class="relative py-28 md:py-36 bg-emerald-950 overflow-hidden">
+  <div class="orb absolute -left-20 top-1/3 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background:radial-gradient(circle,rgba(201,162,75,.12),transparent 70%)"></div>
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-2 gap-16 items-center" data-cine-group="chisiamo">
+    <div class="cine" data-cine="arc" data-cine-i="0" data-cine-dir="left">
+      <p class="text-gold/70 tracking-[.4em] text-xs mb-5">CHI SIAMO</p>
+      <h2 class="font-display text-4xl md:text-6xl font-semibold leading-tight mb-7">Giovani per nascita, <span class="gold-text gold-shine">esigenti per natura.</span></h2>
+      <p class="text-mute text-lg leading-relaxed mb-5">ElegAuto nasce nel 2026 a Mazzarino con un'idea precisa: portare nell'usato uno standard che di solito vedi solo nel nuovo. Auto controllate, garantite e impeccabili — niente di meno.</p>
+      <p class="text-mute text-lg leading-relaxed">Abbiamo clienti che arrivano da lontano perché si fidano. E noi ricambiamo quella fiducia gestendo ogni fase con trasparenza, fino a portarti l'auto dove preferisci. <span class="text-ivory">Eleganza. Cura. Distinzione.</span></p>
+
+      <div class="mt-10 grid grid-cols-3 gap-6">
+        <div class="reveal" data-delay="1"><p class="font-display text-4xl gold-text"><span data-count="100">0</span>%</p><p class="text-mute text-sm mt-1">Garantite & controllate</p></div>
+        <div class="reveal" data-delay="2"><p class="font-display text-4xl gold-text">0</p><p class="text-mute text-sm mt-1">Sorprese nascoste</p></div>
+        <div class="reveal" data-delay="3"><p class="font-display text-4xl gold-text">∞</p><p class="text-mute text-sm mt-1">Cura per il cliente</p></div>
+      </div>
+    </div>
+
+    <div class="cine" data-cine="arc" data-cine-i="1" data-cine-dir="right">
+      <div class="sheen-auto relative rounded-[2rem] border border-gold/20 bg-gradient-to-br from-emerald-800/50 to-emerald-950 p-10 md:p-14 text-center">
+        <span class="font-script text-6xl md:text-7xl gold-text">ElegAuto</span>
+        <div class="hr-gold my-6"></div>
+        <p class="font-display tracking-[.35em] text-gold/80 text-sm">ELEGANZA · CURA · DISTINZIONE</p>
+        <p class="text-mute mt-8 leading-relaxed">Il nostro nome è la nostra promessa. Lo trovi inciso su ogni vettura che esce dal nostro salone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECENSIONI ===================== -->
+<section id="recensioni" class="relative py-28 md:py-36 overflow-hidden" style="background:linear-gradient(180deg,#06241A,#04150E)">
+  <div class="sweep"></div>
+  <div class="bgword fill" style="top:10%" data-driftx="-250" aria-hidden="true">Clienti</div>
+  <div class="relative z-[1] mx-auto max-w-7xl px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <p class="reveal text-gold/70 tracking-[.4em] text-xs mb-5">DICONO DI NOI</p>
+      <h2 class="reveal font-display text-4xl md:text-6xl font-semibold">Parlano i <span class="gold-text italic font-script">nostri clienti</span></h2>
+      <div class="reveal flex items-center justify-center gap-2 mt-6 text-gold" data-delay="1">
+        <span>★★★★★</span><span class="text-mute text-sm">Recensioni verificate su Google</span>
+      </div>
+    </div>
+
+    <div class="m-carousel grid lg:grid-cols-3 gap-6 items-start" data-cine-group="reviews">
+      <figure class="cine rounded-3xl border border-gold/15 bg-emerald-900/30 p-8 hover:border-gold/40 transition" data-cine="sweep" data-cine-i="0">
+        <div class="text-gold mb-4 text-lg">★★★★★</div>
+        <blockquote class="text-ivory/90 leading-relaxed">"Esperienza eccellente dall'inizio alla fine. Il personale si è dimostrato competente, disponibile e trasparente in ogni fase dell'acquisto. La vettura corrisponde perfettamente a quanto descritto ed è stata consegnata in condizioni impeccabili. Sono molto soddisfatto e consiglio vivamente questa concessionaria."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center font-display text-gold">P</span>
+          <span><span class="block text-ivory text-sm">Peppuzzo</span><span class="block text-mute text-xs">Recensione Google</span></span>
+        </figcaption>
+      </figure>
+      <figure class="cine rounded-3xl border border-gold/15 bg-emerald-900/30 p-8 hover:border-gold/40 transition" data-cine="sweep" data-cine-i="1">
+        <div class="text-gold mb-4 text-lg">★★★★★</div>
+        <blockquote class="text-ivory/90 leading-relaxed">"Sono molto soddisfatto dell'acquisto che ho fatto. La macchina mi piace molto e mi sono trovato benissimo fin da subito. Inoltre il ragazzo è stato molto gentile, disponibile e professionale. Sono davvero felice della mia scelta."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center font-display text-gold">A</span>
+          <span><span class="block text-ivory text-sm">Antonino Fabio</span><span class="block text-mute text-xs">Recensione Google</span></span>
+        </figcaption>
+      </figure>
+      <figure class="cine rounded-3xl border border-gold/15 bg-emerald-900/30 p-8 hover:border-gold/40 transition" data-cine="sweep" data-cine-i="2">
+        <div class="text-gold mb-4 text-lg">★★★★★</div>
+        <blockquote class="text-ivory/90 leading-relaxed">"Consiglio vivamente questa concessionaria a chiunque desideri affidarsi a persone preparate e affidabili. Fin dal primo contatto si percepisce la grande passione e l'amore che il team mette nel proprio lavoro. Un autentico entusiasmo che si riflette nell'attenzione al cliente e nella cura di ogni dettaglio."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center font-display text-gold">G</span>
+          <span><span class="block text-ivory text-sm">Gaetano Siciliano</span><span class="block text-mute text-xs">Recensione Google</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="m-hint text-mute text-[11px] tracking-[.3em] mt-5"><span class="text-gold">‹‹</span> SCORRI <span class="text-gold">››</span></p>
+
+    <!-- ===== VIDEO FEEDBACK: spumante ===== -->
+    <div class="mt-24 text-center max-w-2xl mx-auto mb-14">
+      <p class="reveal text-gold/70 tracking-[.4em] text-xs mb-5">SI BRINDA INSIEME</p>
+      <h3 class="reveal font-display text-3xl md:text-5xl font-semibold">Ogni consegna è <span class="gold-text italic font-script">una festa</span></h3>
+      <p class="reveal text-mute mt-4" data-delay="1">Lo spumante che salta, il sorriso del cliente. È così che si chiude un acquisto da ElegAuto.</p>
+    </div>
+
+    <div class="m-carousel m-carousel-video grid gap-3 sm:gap-6 max-w-6xl mx-auto cine-stage" data-cine-group="deck" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="0" data-cine-n="4">
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
+        <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+          <span class="font-script text-2xl">Consegna & brindisi</span>
+        </figcaption>
+        <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
+      </figure>
+      <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="1" data-cine-n="4">
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
+        <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+          <span class="font-script text-2xl">Momento ElegAuto</span>
+        </figcaption>
+        <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
+      </figure>
+      <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="2" data-cine-n="4">
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-3.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
+        <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+          <span class="font-script text-2xl">Brindisi alla nuova auto</span>
+        </figcaption>
+        <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
+      </figure>
+      <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="3" data-cine-n="4">
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-4.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
+        <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+          <span class="font-script text-2xl">Cin cin ElegAuto</span>
+        </figcaption>
+        <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
+      </figure>
+    </div>
+    <p class="m-hint text-mute text-[11px] tracking-[.3em] mt-5"><span class="text-gold">‹‹</span> SCORRI <span class="text-gold">››</span></p>
+  </div>
+</section>
+
+<!-- ===================== CONTATTI ===================== -->
+<section id="contatti" class="relative py-28 md:py-36 bg-emerald-950 overflow-hidden">
+  <div class="absolute inset-0 opacity-40" style="background:radial-gradient(50% 60% at 20% 30%, rgba(201,162,75,.10), transparent)"></div>
+  <div class="bgword fill" style="top:9%" data-driftx="220" aria-hidden="true">Vieni</div>
+  <div class="relative z-[1] mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-2 gap-14">
+    <div class="reveal-l">
+      <p class="text-gold/70 tracking-[.4em] text-xs mb-5">VIENI A TROVARCI</p>
+      <h2 class="font-display text-4xl md:text-6xl font-semibold leading-tight mb-8">Parliamo della tua <span class="gold-text">prossima auto.</span></h2>
+
+      <ul class="space-y-6">
+        <li class="flex items-start gap-4">
+          <span class="mt-1 text-gold"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg></span>
+          <div><p class="text-ivory text-lg">Viale della Regione 83</p><p class="text-mute">Mazzarino (CL)</p></div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 text-gold"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg></span>
+          <div><a href="tel:+393460176075" class="text-ivory text-lg link-underline hover:text-gold">+39 346 017 6075</a><p class="text-mute">Chiama o scrivici su WhatsApp</p></div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 text-gold"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span>
+          <div><p class="text-ivory text-lg">Lun – Sab</p><p class="text-mute">09:00 – 13:00 · 15:30 – 19:30</p></div>
+        </li>
+      </ul>
+
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="tel:+393460176075" class="btn-gold inline-flex items-center gap-2 rounded-full px-7 py-4 font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiama ora
+        </a>
+        <a href="https://wa.me/393460176075" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-gold/40 px-7 py-4 hover:bg-gold/10 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zm-4.5 4.5c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.62 2.62 1.03 3.16.83 3.73.77.57-.05 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.08-.13-.29-.21-.6-.36-.31-.16-1.84-.91-2.12-1.01-.29-.1-.5-.16-.71.16-.21.31-.81 1.01-1 1.22-.18.21-.37.23-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.54-1.84-1.73-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.15-.19.2-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.7-1.7-.96-2.32-.25-.61-.51-.53-.7-.54-.18-.01-.39-.01-.6-.01z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-10 flex items-center gap-5">
+        <a href="https://instagram.com/elegauto.official" target="_blank" rel="noopener" class="flex items-center gap-2 text-mute hover:text-gold transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.17.4.37 1 .42 2.2.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .37-2.2.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.3-.28.8-.32 1.7C3.2 8.5 3.2 8.9 3.2 12s0 3.5.07 4.7c.04.9.2 1.4.32 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.3.12.8.28 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.3.28-.8.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.32-1.7a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.3-.12-.8-.28-1.7-.32C15.5 4 15.1 4 12 4Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2.9a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+          @elegauto.official
+        </a>
+        <a href="https://tiktok.com/@elegauto_" target="_blank" rel="noopener" class="flex items-center gap-2 text-mute hover:text-gold transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3.1v12.4a2.5 2.5 0 1 1-2.5-2.5c.26 0 .5.04.74.11V9.8a5.6 5.6 0 0 0-.74-.05A5.6 5.6 0 1 0 15.6 15.4V9.3a7.3 7.3 0 0 0 4.3 1.4V7.6a4.3 4.3 0 0 1-3.3-1.8Z"/></svg>
+          elegauto_
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal-r">
+      <div class="rounded-[2rem] overflow-hidden border border-gold/20 h-full min-h-[420px]">
+        <iframe
+          title="Mappa ElegAuto Mazzarino"
+          class="w-full h-full min-h-[420px]"
+          style="filter:grayscale(.3) contrast(1.05);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Viale+della+Regione+83,+Mazzarino+CL&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-gold/15 bg-emerald-950 py-14">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="text-center md:text-left">
+      <span class="font-script text-3xl gold-text">ElegAuto</span>
+      <p class="text-mute text-sm mt-1 tracking-[.25em]">ELEGANZA · CURA · DISTINZIONE</p>
+    </div>
+    <p class="text-mute text-sm">Developed By R.Biagio © <span id="year"></span> ElegAuto · Viale della Regione 83, Mazzarino (CL) · P.IVA IT02167530852  </p>
+  </div>
+</footer>
+
+<!-- ===================== STICKY CALL (mobile) ===================== -->
+<a href="tel:+393460176075" class="md:hidden fixed bottom-5 right-5 z-50 btn-gold rounded-full w-16 h-16 flex items-center justify-center shadow-2xl" aria-label="Chiama ElegAuto">
+  <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // full-screen interactive honeycomb that lights up near the cursor
+  const hexI = document.getElementById('hexInteractive');
+  if (hexI) {
+    const R = 38, dx = Math.sqrt(3) * R, dy = 1.5 * R;
+    const cols = Math.ceil(1920 / dx) + 1, rows = Math.ceil(1080 / dy) + 1;
+    const vbW = cols * dx, vbH = rows * dy;
+    const pts = (cx, cy) => [...Array(6)].map((_, i) => { const a = Math.PI / 180 * (60 * i - 90); return (cx + R * Math.cos(a)).toFixed(1) + ',' + (cy + R * Math.sin(a)).toFixed(1); }).join(' ');
+    const cells = [];
+    let html = '';
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const cx = c * dx + (r % 2 ? dx / 2 : 0), cy = r * dy;
+      cells.push({ cx, cy });
+      html += `<polygon points="${pts(cx, cy)}" fill="none" stroke="#C9A24B" stroke-width="1.2" style="opacity:.07;transition:opacity .3s ease, filter .3s ease"/>`;
+    }
+    hexI.setAttribute('viewBox', `0 0 ${vbW.toFixed(0)} ${vbH.toFixed(0)}`);
+    hexI.innerHTML = html;
+    const polys = hexI.querySelectorAll('polygon');
+    const radius = R * 3.2;
+    const sec = document.getElementById('expandVid');
+    const pedalRigEl = document.getElementById('pedalRig');
+    function light(mx, my) {
+      const rect = hexI.getBoundingClientRect();
+      if (rect.width === 0) return;
+      const sx = (mx - rect.left) / rect.width * vbW, sy = (my - rect.top) / rect.height * vbH;
+      // hexagons sitting behind the pedal + tachometer must never light up
+      let pad = null;
+      if (pedalRigEl && !pedalRigEl.classList.contains('hidden')) {
+        const pr = pedalRigEl.getBoundingClientRect();
+        const m = 28; // small margin around the rig
+        pad = {
+          x0: (pr.left - rect.left - m) / rect.width * vbW,
+          x1: (pr.right - rect.left + m) / rect.width * vbW,
+          y0: (pr.top - rect.top - m) / rect.height * vbH,
+          y1: (pr.bottom - rect.top + m) / rect.height * vbH,
+        };
+      }
+      for (let i = 0; i < cells.length; i++) {
+        const p = polys[i];
+        if (pad && cells[i].cx >= pad.x0 && cells[i].cx <= pad.x1 && cells[i].cy >= pad.y0 && cells[i].cy <= pad.y1) {
+          p.style.opacity = '0.07';
+          p.style.filter = 'none';
+          continue;
+        }
+        const d = Math.hypot(cells[i].cx - sx, cells[i].cy - sy);
+        const t = Math.max(0, 1 - d / radius);
+        p.style.opacity = (0.07 + t * 0.85).toFixed(2);
+        p.style.filter = t > 0.15 ? `drop-shadow(0 0 ${(t * 7).toFixed(1)}px rgba(201,162,75,.85))` : 'none';
+      }
+    }
+    if (sec) sec.addEventListener('pointermove', (e) => light(e.clientX, e.clientY), { passive: true });
+
+    // Silk "telo": flowing emerald/gold cloth drawn on canvas (cheap sine layers, no SVG filters)
+    const silkCv = document.getElementById('silkBg');
+    if (silkCv && silkCv.getContext && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+      const ctx = silkCv.getContext('2d');
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      let W = 0, H = 0;
+      const fit = () => {
+        const r = silkCv.getBoundingClientRect();
+        W = Math.max(1, r.width); H = Math.max(1, r.height);
+        silkCv.width = Math.round(W * dpr); silkCv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+      fit();
+      addEventListener('resize', fit, { passive: true });
+      // cursor target (0..1), eased
+      let tx = 0.5, ty = 0.45, mx = 0.5, my = 0.45, t = 0, raf = 0;
+      sec.addEventListener('pointermove', (e) => {
+        const r = sec.getBoundingClientRect();
+        tx = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+        ty = Math.min(1, Math.max(0, e.clientY / window.innerHeight));
+      }, { passive: true });
+      // 5 stacked silk bands, back (dark emerald) to front (lit gold-green) — soft, low-contrast
+      const bands = [
+        { base: 0.18, amp: 0.16, len: 1.1, sp: 0.45, col: [10, 58, 40], a: 0.30 },
+        { base: 0.36, amp: 0.20, len: 0.9, sp: 0.62, col: [15, 82, 54], a: 0.30 },
+        { base: 0.54, amp: 0.18, len: 1.3, sp: -0.5, col: [22, 104, 70], a: 0.26 },
+        { base: 0.70, amp: 0.22, len: 0.8, sp: 0.7, col: [28, 120, 84], a: 0.24 },
+        { base: 0.86, amp: 0.20, len: 1.05, sp: -0.6, col: [12, 70, 48], a: 0.34 },
+      ];
+      const draw = () => {
+        t += 0.006;
+        mx += (tx - mx) * 0.05; my += (ty - my) * 0.05;
+        ctx.clearRect(0, 0, W, H);
+        const bias = (mx - 0.5), vbias = (my - 0.5);
+        // generous blur dissolves the band edges into soft, diffuse folds
+        ctx.filter = `blur(${Math.max(22, W * 0.035).toFixed(0)}px)`;
+        for (let b = 0; b < bands.length; b++) {
+          const bd = bands[b];
+          const yBase = (bd.base + vbias * 0.10) * H;
+          ctx.beginPath();
+          ctx.moveTo(0, H);
+          const step = Math.max(14, W / 60);
+          for (let x = 0; x <= W; x += step) {
+            const u = x / W;
+            // two sines + cursor-driven phase shift = living, draping folds (gentle harmonics)
+            const y = yBase
+              + Math.sin(u * Math.PI * 2 * bd.len + t * bd.sp + b) * bd.amp * H * 0.5
+              + Math.sin(u * Math.PI * 4 * bd.len - t * bd.sp * 1.4 + bias * 4) * bd.amp * H * 0.12
+              + bias * 38 * (b % 2 ? 1 : -1);
+            ctx.lineTo(x, y);
+          }
+          ctx.lineTo(W, H);
+          ctx.closePath();
+          // vertical gradient per band: lit crest -> deep fold, sheen biased to cursor
+          const g = ctx.createLinearGradient(0, yBase - bd.amp * H, 0, H);
+          const lit = 1 - Math.abs(bd.base - (0.35 + my * 0.3));
+          g.addColorStop(0, `rgba(${bd.col[0] + lit * 34},${bd.col[1] + lit * 42},${bd.col[2] + lit * 26},${bd.a})`);
+          g.addColorStop(1, `rgba(${bd.col[0] * 0.55 | 0},${bd.col[1] * 0.55 | 0},${bd.col[2] * 0.55 | 0},${bd.a})`);
+          ctx.fillStyle = g;
+          ctx.fill();
+        }
+        ctx.filter = 'none';
+        // moving gold sheen pooled around the cursor
+        const gx = mx * W, gy = (0.3 + my * 0.4) * H;
+        const sg = ctx.createRadialGradient(gx, gy, 0, gx, gy, Math.max(W, H) * 0.5);
+        sg.addColorStop(0, 'rgba(240,215,138,0.16)');
+        sg.addColorStop(0.4, 'rgba(201,162,75,0.05)');
+        sg.addColorStop(1, 'rgba(201,162,75,0)');
+        ctx.globalCompositeOperation = 'screen';
+        ctx.fillStyle = sg;
+        ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'source-over';
+        raf = requestAnimationFrame(draw);
+      };
+      const io = new IntersectionObserver(([en]) => {
+        if (en.isIntersecting) { if (!raf) { fit(); raf = requestAnimationFrame(draw); } }
+        else { cancelAnimationFrame(raf); raf = 0; }
+      }, { threshold: 0.01 });
+      io.observe(sec);
+    }
+  }
+
+  // scroll progress bar
+  const scrollbar = document.getElementById('scrollbar');
+  if (scrollbar) {
+    const updateBar = () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      scrollbar.style.width = (h > 0 ? (scrollY / h) * 100 : 0).toFixed(2) + '%';
+    };
+    addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+  }
+
+  // animated count-up (started when its section appears)
+  const reduceCount = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.animateCount = function (el) {
+    if (el.dataset.counted) return; el.dataset.counted = '1';
+    const target = parseFloat(el.dataset.count), dur = 2200, t0 = performance.now();
+    el.style.display = 'inline-block';
+    if (reduceCount) { el.textContent = target; return; }
+    el.classList.add('counting');
+    const step = (now) => {
+      const p = Math.min((now - t0) / dur, 1);
+      el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+      if (p < 1) requestAnimationFrame(step); else el.classList.remove('counting');
+    };
+    requestAnimationFrame(step);
+  };
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { window.animateCount(e.target); countIO.unobserve(e.target); } });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+  // refined 3D tilt on the "fiducia" value cards
+  if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('#valori .group').forEach(card => {
+      card.style.transformStyle = 'preserve-3d';
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const ry = ((e.clientX - r.left) / r.width - 0.5) * 10;
+        const rx = -((e.clientY - r.top) / r.height - 0.5) * 10;
+        card.style.transform = `translateY(-7px) rotateX(${rx.toFixed(1)}deg) rotateY(${ry.toFixed(1)}deg)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  // lively gold sweep reveal
+  const curtainIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('go'); curtainIO.unobserve(e.target); } });
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.sweep').forEach(c => curtainIO.observe(c));
+
+
+  // custom cursor: golden arrow that grows near interactive things
+  if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.body.classList.add('has-cursor');
+    const arrow = document.createElement('div'); arrow.id = 'curArrow';
+    arrow.innerHTML = '<svg width="15" height="17" viewBox="0 0 15 17" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1 L1.5 13 L4.4 10.2 L6.4 14.6 L8.1 13.9 L6.1 9.6 L10.4 9.6 Z" fill="#F0D78A" stroke="#8A6420" stroke-width=".7" stroke-linejoin="round"/></svg>';
+    document.body.append(arrow);
+    addEventListener('pointermove', (e) => { arrow.style.left = e.clientX + 'px'; arrow.style.top = e.clientY + 'px'; }, { passive: true });
+    addEventListener('pointerdown', () => arrow.classList.add('active'));
+    addEventListener('pointerup', () => { if (!arrow.dataset.hover) arrow.classList.remove('active'); });
+    const hov = 'a,button,input,select,textarea,.group,#recensioni figure,#phoneWords span,#tourGallery img,#tourGallery video';
+    addEventListener('pointerover', (e) => { if (e.target.closest(hov)) { arrow.dataset.hover = '1'; arrow.classList.add('active'); } }, { passive: true });
+    addEventListener('pointerout', (e) => { if (e.target.closest(hov)) { delete arrow.dataset.hover; arrow.classList.remove('active'); } }, { passive: true });
+  }
+
+  // magnetic buttons (gold CTAs gently follow the cursor)
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.btn-gold').forEach(btn => {
+      btn.classList.add('magnetic');
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const mx = e.clientX - r.left - r.width / 2;
+        const my = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${(mx * 0.2).toFixed(1)}px, ${(my * 0.32).toFixed(1)}px)`;
+      });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // interactive 3D tilt on the phone (follows mouse)
+  const phoneTilt = document.getElementById('phoneTilt');
+  if (phoneTilt && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const host = document.getElementById('tourSec');
+    host.addEventListener('pointermove', (e) => {
+      const r = phoneTilt.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const ry = Math.max(-12, Math.min(12, (e.clientX - cx) / r.width * 26));
+      const rx = Math.max(-10, Math.min(10, -(e.clientY - cy) / r.height * 18));
+      phoneTilt.style.transform = `rotateX(${rx.toFixed(1)}deg) rotateY(${ry.toFixed(1)}deg)`;
+    }, { passive: true });
+    host.addEventListener('pointerleave', () => { phoneTilt.style.transform = 'rotateX(0) rotateY(0)'; });
+  }
+
+  // navbar shrink on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => {
+    nav.firstElementChild.firstElementChild.classList.toggle('!py-2', scrollY > 40);
+  });
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => menu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-link, #mobileMenu a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+  // hero text build
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // --- force EVERY video to autoplay muted, no play button (runs regardless of reduced-motion) ---
+  (function autoplayAllVideos() {
+    const playVid = (v) => { try { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute('playsinline',''); v.removeAttribute('controls'); const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {} };
+    const playAll = () => document.querySelectorAll('video').forEach(playVid);
+    const wire = (v) => {
+      v.muted = true; v.removeAttribute('controls');
+      ['loadedmetadata','loadeddata','canplay','canplaythrough','stalled','suspend'].forEach(ev => v.addEventListener(ev, () => playVid(v)));
+      if (v.preload === 'none' || v.preload === 'metadata') v.preload = 'auto';
+      v.load && v.load();
+    };
+    const inView = (v) => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
+    document.querySelectorAll('video').forEach(v => { wire(v); playVid(v); });
+    // persistent watchdog: keep retrying any paused, in-view video (covers Safari's
+    // refusal to autoplay while the reveal fade-in is still in progress)
+    setInterval(() => { document.querySelectorAll('video').forEach(v => { if (v.paused && !v.ended && inView(v)) playVid(v); }); }, 350);
+    // play each video when it scrolls into view (browsers pause/refuse offscreen autoplay)
+    if ('IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) playVid(e.target); }), { threshold: 0.01 });
+      document.querySelectorAll('video').forEach(v => vio.observe(v));
+    }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) playAll(); });
+    // safety net: any user interaction unblocks still-paused videos
+    const kick = () => playAll();
+    ['pointerdown','scroll','keydown','touchstart'].forEach(ev => addEventListener(ev, kick, { passive: true }));
+    addEventListener('load', playAll);
+  })();
+
+  function typeLine(el, text, baseDelay) {
+    if (reduce) { el.textContent = text; return; }
+    el.innerHTML = '';
+    let i = 0;
+    text.split(' ').forEach((word, w) => {
+      if (w > 0) { el.appendChild(document.createTextNode(' ')); i++; }   // a-capo solo tra le parole
+      const wordEl = document.createElement('span');
+      wordEl.style.whiteSpace = 'nowrap';   // parola indivisibile: niente "compr-messi" da mobile
+      [...word].forEach((ch) => {
+        const s = document.createElement('span');
+        s.className = 'char';
+        s.style.animationDelay = (baseDelay + i * 0.04) + 's';
+        s.textContent = ch;
+        wordEl.appendChild(s);
+        i++;
+      });
+      el.appendChild(wordEl);
+    });
+  }
+
+  typeLine(document.getElementById('line1'), 'La tua auto,', 0.2);
+  typeLine(document.getElementById('line2'), 'senza compromessi.', 0.7); //FIX TO DO: questa riga non viene visualizzata
+  const kicker = document.getElementById('kicker');
+  kicker.style.transition = 'opacity 1s ease 0.1s'; requestAnimationFrame(() => kicker.style.opacity = '1');
+
+  // reveal observer
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(c => setTimeout(() => window.animateCount(c), 300));
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s,.luxe-rise,.luxe-line').forEach(el => io.observe(el));
+
+  // ===== Esperienza: motion in stile Framer Motion =====
+  (() => {
+    // split dei titoli in parole (stagger reveal)
+    document.querySelectorAll('.exp-head').forEach(h => {
+      const words = h.textContent.trim().split(/\s+/);
+      h.textContent = '';
+      words.forEach((w, i) => {
+        const mask = document.createElement('span');
+        mask.className = 'exp-wmask';
+        const inner = document.createElement('span');
+        inner.className = 'exp-word';
+        inner.textContent = w;
+        inner.style.transitionDelay = (i * 0.07) + 's';
+        mask.appendChild(inner);
+        h.appendChild(mask);
+        if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
+      });
+    });
+
+    const frames = Array.from(document.querySelectorAll('#esperienza .exp-frame'));
+
+    // entrata a molla degli hotspot + reveal titolo, in viewport
+    const evo = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const frame = e.target;
+        frame.querySelectorAll('.hotspot').forEach((hs, i) => {
+          hs.style.transitionDelay = (0.35 + i * 0.18) + 's';
+        });
+        frame.classList.add('spots-in');
+        const head = frame.closest('.grid')?.querySelector('.exp-head');
+        if (head) head.classList.add('in');
+        evo.unobserve(frame);
+      });
+    }, { threshold: 0.3 });
+    frames.forEach(f => evo.observe(f));
+
+    if (reduce) return;
+
+    // tilt 3D + glare che segue il puntatore (solo dispositivi con mouse)
+    if (matchMedia('(pointer:fine)').matches) {
+      frames.forEach(frame => {
+        let raf = 0;
+        const onMove = (ev) => {
+          const r = frame.getBoundingClientRect();
+          const px = (ev.clientX - r.left) / r.width;
+          const py = (ev.clientY - r.top) / r.height;
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const rx = (0.5 - py) * 9;   // gradi
+            const ry = (px - 0.5) * 11;
+            frame.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+            frame.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+            frame.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+          });
+        };
+        frame.addEventListener('pointerenter', () => frame.classList.add('tilting'));
+        frame.addEventListener('pointermove', onMove);
+        frame.addEventListener('pointerleave', () => {
+          frame.classList.remove('tilting');
+          frame.style.transform = '';
+        });
+      });
+    }
+
+    // ingresso cinematografico scrubbed + parallax verticale durante lo scroll
+    const paraxEls = Array.from(document.querySelectorAll('#esperienza .exp-parax'));
+    const clamp01 = (v) => v < 0 ? 0 : (v > 1 ? 1 : v);
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);   // settle morbido, percezione "costosa"
+    let pRaf = 0;
+    const updateParax = () => {
+      pRaf = 0;
+      const vh = innerHeight;
+      paraxEls.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+        const mid = r.top + r.height / 2;
+
+        // --- ingresso scenico: parte grande/spostato/sfocato, si assesta avvicinandosi al centro ---
+        // 0 quando il blocco è ancora in basso, 1 quando ha raggiunto il punto di "settle" (~58% viewport)
+        const raw = (vh - r.top) / (vh * 0.62);
+        const e = easeOut(clamp01(raw));
+        const side = i % 2 === 0 ? -1 : 1;           // direzione di arrivo alternata
+        el.style.setProperty('--escale', (1.42 - 0.42 * e).toFixed(3));
+        el.style.setProperty('--ex', ((1 - e) * 70 * side).toFixed(1) + 'px');
+        el.style.setProperty('--erot', ((1 - e) * 3.5 * side).toFixed(2) + 'deg');
+        el.style.setProperty('--eblur', ((1 - e) * 12).toFixed(2) + 'px');
+        el.style.setProperty('--eop', (0.25 + 0.75 * e).toFixed(3));
+
+        // --- galleggiamento: subentra solo a ingresso completato, come respiro discreto ---
+        const prog = (mid - vh / 2) / vh;            // -1..1 attorno al centro
+        const amp = i % 2 === 0 ? -34 : 34;          // direzioni alternate
+        el.style.setProperty('--ep', (prog * amp * e).toFixed(1) + 'px');
+
+        // --- numero gigante 01/02/03: entrata enorme che rientra in scala + drift ---
+        const num = el.closest('.exp-pcol')?.querySelector('.exp-num');
+        if (num) {
+          const drift = prog * 30 * side;            // parallax orizzontale dopo l'assestamento
+          num.style.setProperty('--nsc', (1.45 - 0.45 * e).toFixed(3));
+          num.style.setProperty('--nx', ((1 - e) * 80 * side + drift * e).toFixed(1) + 'px');
+          num.style.setProperty('--ny', ((1 - e) * 26).toFixed(1) + 'px');
+          num.style.setProperty('--nop', (0.12 + 0.88 * e).toFixed(3));
+        }
+      });
+    };
+    const onParaxScroll = () => { if (!pRaf) pRaf = requestAnimationFrame(updateParax); };
+    addEventListener('scroll', onParaxScroll, { passive: true });
+    addEventListener('resize', onParaxScroll, { passive: true });
+    updateParax();
+  })();
+
+  // parallax + scroll-scale + kinetic bands
+  if (!reduce) {
+    const px = document.querySelectorAll('[data-parallax]');
+    const scaleEls = document.querySelectorAll('[data-scale]');
+    const kin = document.querySelectorAll('[data-kinetic]');
+    const asm = document.getElementById('assembly');
+    const asmParts = asm ? asm.querySelectorAll('[data-assemble]') : [];
+    const asmBg = asm ? asm.querySelector('[data-assemble-bg]') : null;
+    const asmBar = document.getElementById('asmBar');
+    const clamp = (v) => Math.min(Math.max(v, 0), 1);
+    // narrative: enter -> big expand -> move right + "Chiamaci" + streaks -> iPhone + category selection
+    const expandSec = document.getElementById('expandVid');
+    const expandBox = document.getElementById('expandBox');
+    const expandWords = document.querySelectorAll('[data-expand-word]');
+    const phoneVideoEl = document.getElementById('phoneVideo');
+    const phoneNotch = document.getElementById('phoneNotch');
+    const expandVeil = document.querySelector('[data-expand-veil]');
+    const hexI2 = document.getElementById('hexInteractive');
+    const silkBgEl = document.getElementById('silkBg');
+    const dataHero = document.querySelector('[data-hero]');
+    const dataTrans = document.querySelector('[data-trans]');
+    const transLink = document.querySelector('[data-trans-link]');
+    const dataStreaks = document.querySelector('[data-streaks]');
+    const dataPanel = document.querySelector('[data-panel]');
+    const tryPlay = () => { if (!phoneVideoEl) return; phoneVideoEl.muted = true; const p = phoneVideoEl.play(); if (p && p.catch) p.catch(() => {}); };
+    const setPhoneVid = (src) => { if (phoneVideoEl && !phoneVideoEl.src.endsWith(src)) { phoneVideoEl.src = src; phoneVideoEl.load(); } tryPlay(); };
+    if (phoneVideoEl) { phoneVideoEl.addEventListener('canplay', tryPlay); phoneVideoEl.addEventListener('loadeddata', tryPlay); tryPlay(); }
+    // catalog (browsable categories)
+    const CATALOG = {
+      showroom: { title: 'Il nostro salone', items: [
+        { sup: 'BENVENUTO', name: 'Showroom 360°', specs: 'Vienilo a vivere di persona', vid: 'assets/video/salone_entrata.mp4' },
+      ]},
+      vetture: { title: 'Alcuni dei nostri gioiellini', items: [
+        { sup: 'SPORTIVA TEDESCA', name: 'Mercedes-AMG A45 4MATIC', specs: 'Automatica · 1.9 · 180 kW · 275 CV', vid: 'assets/video/auto2.mp4', pedal: true },
+        { sup: 'ICONA ITALIANA', name: 'Alfa Romeo Giulietta 1.4 MultiAir', specs: 'Benzina · 170 CV · Motore MultiAir', vid: 'assets/video/auto3.mp4' },
+        { sup: 'SPORTIVA ITALIANA', name: 'Abarth 595 Yamaha Factory Racing', specs: 'Edizione speciale · Yamaha Factory Racing', vid: 'assets/video/abarth595.mp4' },
+        { sup: 'COMPATTA TEDESCA', name: 'Volkswagen Golf R-Line', specs: '1.6 TDI · 115 CV · 2018', vid: 'assets/video/golf_rline.mp4' },
+        { sup: 'BERLINA PREMIUM', name: 'Audi A3 Sportback', specs: 'Eleganza · Comfort premium', vid: 'assets/video/audi_a3.mp4' },
+        { sup: 'SUV FRANCESE', name: 'Peugeot 3008 Allure Pack', specs: 'SUV · Allestimento Allure Pack', vid: 'assets/video/peugeot3008.mp4' },
+        { sup: 'SUV AMERICANO', name: 'Jeep Compass Limited', specs: '1.6 Multijet Diesel · Allestimento Limited', vid: 'assets/video/jeep_compass.mp4' },
+        { sup: 'CITYCAR ELETTRICA', name: 'Fiat 500 Elettrica Icon', specs: 'Elettrica · 42 kWh · 95 CV (43 kW) · 2021', vid: 'assets/video/fiat500.mp4' },
+      ]},
+    };
+    let curCat = 'showroom', curIdx = 0;
+    const $super = dataPanel.querySelector('[data-super]'), $title = dataPanel.querySelector('[data-cat-title]'), $name = dataPanel.querySelector('[data-name]'), $specs = dataPanel.querySelector('[data-specs]'), $idx = dataPanel.querySelector('[data-idx]');
+    const catTabs = dataPanel.querySelectorAll('.cat-tab');
+    const carPedal = document.getElementById('pedalRig');
+    function renderCat() {
+      const cat = CATALOG[curCat], it = cat.items[curIdx];
+      $super.textContent = cat.title; $title.textContent = it.sup; $name.textContent = it.name; $specs.textContent = it.specs;
+      $idx.textContent = (curIdx + 1) + ' / ' + cat.items.length;
+      const navEl = dataPanel.querySelector('[data-nav]');
+      if (navEl) navEl.style.display = cat.items.length > 1 ? '' : 'none';
+      // the interactive pedal + tachometer only belong to the German sports car
+      if (carPedal) { carPedal.classList.toggle('hidden', !it.pedal); if (it.pedal) { carPedal.style.opacity = ((parseFloat(dataPanel.style.opacity) || 0) * 0.6).toFixed(2); } else { carPedal.classList.remove('revving','pressed','redline'); } }
+      setPhoneVid(it.vid);
+      catTabs.forEach(t => { const a = t.dataset.cat === curCat; t.style.background = a ? 'rgba(201,162,75,.18)' : ''; t.style.borderColor = a ? 'rgba(201,162,75,.8)' : ''; });
+    }
+    catTabs.forEach(t => t.addEventListener('click', () => { curCat = t.dataset.cat; curIdx = 0; renderCat(); }));
+    dataPanel.querySelector('[data-prev]').addEventListener('click', () => { const n = CATALOG[curCat].items.length; curIdx = (curIdx - 1 + n) % n; renderCat(); });
+    dataPanel.querySelector('[data-next]').addEventListener('click', () => { const n = CATALOG[curCat].items.length; curIdx = (curIdx + 1) % n; renderCat(); });
+    renderCat();
+    let scrolledUpReset = false;
+    // gauge + route
+    const gauge = document.getElementById('motionRow');
+    const gaugeArc = document.getElementById('gaugeArc');
+    const gaugeNeedle = document.getElementById('gaugeNeedle');
+    const gaugeNum = document.getElementById('gaugeNum');
+    const routeLine = document.getElementById('routeLine');
+    const routeCar = document.getElementById('routeCar');
+    const routeLen = routeLine ? routeLine.getTotalLength() : 0;
+    if (routeLine) { routeLine.style.strokeDasharray = routeLen; routeLine.style.strokeDashoffset = routeLen; }
+    let ticking = false;
+    function onScroll() {
+      const y = scrollY;
+      px.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax);
+        el.style.transform = `translateY(${y * speed}px)`;
+      });
+      scaleEls.forEach(el => {
+        const f = parseFloat(el.dataset.scale);
+        const r = el.getBoundingClientRect();
+        const prog = 1 - Math.min(Math.max(r.top / innerHeight, 0), 1);
+        el.style.transform = `scale(${1 + prog * f})`;
+        el.style.opacity = (0.06 + prog * 0.10).toFixed(3);
+      });
+      kin.forEach(el => {
+        const dir = parseFloat(el.dataset.kinetic);
+        const r = el.parentElement.getBoundingClientRect();
+        const prog = (innerHeight - r.top) / (innerHeight + r.height);
+        el.style.transform = `translateX(${(prog - 0.5) * dir}px)`;
+      });
+      // car assembly
+      if (asm) {
+        const r = asm.getBoundingClientRect();
+        const total = asm.offsetHeight - innerHeight;
+        let p = total > 0 ? (-r.top) / total : 0;
+        p = Math.min(Math.max(p, 0), 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        asmParts.forEach(el => {
+          const [dx, dy] = el.dataset.assemble.split(',').map(Number);
+          const k = 1 - ease;
+          el.setAttribute('transform', `translate(${(dx * k).toFixed(1)} ${(dy * k).toFixed(1)})`);
+          el.style.opacity = Math.min(1, ease * 1.4).toFixed(2);
+        });
+        if (asmBg) { asmBg.style.transform = `scale(${(0.7 + ease * 0.6).toFixed(2)})`; asmBg.style.opacity = (0.04 + ease * 0.08).toFixed(2); }
+        if (asmBar) asmBar.style.width = (p * 100).toFixed(0) + '%';
+      }
+      // narrative section
+      if (expandSec && expandBox) {
+        const r = expandSec.getBoundingClientRect();
+        const total = expandSec.offsetHeight - innerHeight;
+        const p = total > 0 ? clamp(-r.top / total) : 0;
+        const e1 = clamp(p / 0.26);                  // big expand (centered)
+        const e2 = clamp((p - 0.30) / 0.32);         // slide right + morph toward phone
+        const e3 = clamp((p - 0.62) / 0.22);         // finalize iPhone + panel + hex
+        // size: 300x480 -> BIG -> iPad landscape (4:3)
+        // on tablet widths the left panel and the video sit side by side, so the
+        // video must be narrower and slide further right to clear the text panel.
+        const isMobile = innerWidth < 768;
+        const isTablet = innerWidth >= 768 && innerWidth < 1180;
+        // expand bigger first (fills the screen) before sliding right and morphing into the iPad.
+        // su mobile l'apertura è verticale e quasi a tutto schermo (niente formato iPad orizzontale).
+        const bigW = isMobile ? innerWidth * 0.92 : Math.min(1140, innerWidth * 0.94);
+        const bigH = isMobile ? innerHeight * 0.94 : Math.min(innerHeight * 0.90, 900);
+        // fase finale: su desktop/tablet diventa un display orizzontale che scivola a destra;
+        // su mobile resta verticale e centrato, ma si stringe tagliando la parte bassa così da
+        // liberare spazio sotto dove sfogliare le vetture.
+        const phW = isMobile ? innerWidth * 0.86 : Math.min(innerWidth * (isTablet ? 0.48 : 0.58), 800);
+        const phH = isMobile ? innerHeight * 0.56 : Math.min(phW * 0.74, innerHeight * 0.74);
+        const slideFrac = isMobile ? 0 : (isTablet ? 0.26 : 0.17);
+        // base (phase-1) card size: smaller on phones so the stacked title/tagline clear it
+        const baseW = isMobile ? 208 : 264, baseH = isMobile ? 392 : 496;
+        expandBox.style.width = ((baseW + e1 * (bigW - baseW)) + e2 * (phW - bigW)).toFixed(0) + 'px';
+        expandBox.style.height = ((baseH + e1 * (bigH - baseH)) + e2 * (phH - bigH)).toFixed(0) + 'px';
+        // su mobile il riquadro non slitta a destra: sale leggermente per lasciare il fondo libero
+        const shiftX = e2 * innerWidth * slideFrac;
+        const shiftY = isMobile ? -e3 * innerHeight * 0.1 : 0;
+        expandBox.style.transform = `translate(${shiftX.toFixed(0)}px, ${shiftY.toFixed(0)}px)`;
+        // bezel forms with e3 (uniform, slim — iPad look)
+        expandBox.style.borderWidth = (1 + e3 * 7).toFixed(1) + 'px';
+        expandBox.style.borderColor = e3 > 0.2 ? 'rgba(15,82,54,.6)' : 'rgba(201,162,75,.2)';
+        expandBox.style.borderRadius = (2 - e3 * 0.6).toFixed(2) + 'rem';
+        expandBox.style.boxShadow = `0 30px 90px -20px rgba(0,0,0,.7), inset 0 0 0 ${(e3 * 2).toFixed(1)}px rgba(201,162,75,.25)`;
+        // su mobile lo schermo non deve avere il notch
+        if (phoneNotch) phoneNotch.style.opacity = isMobile ? '0' : clamp((e3 - 0.4) / 0.4).toFixed(2);
+        // hero words slide out
+        expandWords.forEach(el => { const d = parseFloat(el.dataset.expandWord); el.style.transform = `translateX(${(d * e1 * 45).toFixed(1)}vw)`; });
+        if (dataHero) dataHero.style.opacity = clamp(1 - e1 * 1.5).toFixed(2);
+        // "Chiamaci" phrase + streaks during the move
+        const tP = clamp((p - 0.34) / 0.08) * (1 - clamp((p - 0.58) / 0.06));
+        if (dataTrans) dataTrans.style.opacity = tP.toFixed(2);
+        if (transLink) transLink.style.pointerEvents = tP > 0.4 ? 'auto' : 'none';
+        if (dataStreaks) dataStreaks.style.opacity = (clamp((p - 0.30) / 0.05) * (1 - clamp((p - 0.60) / 0.06)) * 0.85).toFixed(2);
+        // final panel + hex + dim veil
+        if (dataPanel) dataPanel.style.opacity = e3.toFixed(2);
+        if (carPedal && !carPedal.classList.contains('hidden')) carPedal.style.opacity = (e3 * 0.6).toFixed(2);
+        if (hexI2) hexI2.style.opacity = (e3 * 0.9).toFixed(2);
+        // the silk "telo" lives before the hexagons; it clears the stage as they assemble
+        if (silkBgEl) silkBgEl.style.opacity = clamp(1 - e3 * 1.4).toFixed(2);
+        if (expandVeil) expandVeil.style.opacity = (0.1 * (1 - e3)).toFixed(2);
+        // scrolling back up resets to Showroom 360°
+        if (p < 0.55) { if (!scrolledUpReset) { scrolledUpReset = true; curCat = 'showroom'; curIdx = 0; renderCat(); } } else { scrolledUpReset = false; }
+      }
+      // gauge + route
+      if (gauge) {
+        const r = gauge.getBoundingClientRect();
+        const g = clamp((innerHeight * 0.6 - r.top) / (innerHeight * 0.85));
+        const eased = 1 - Math.pow(1 - g, 2);
+        if (gaugeArc) gaugeArc.style.strokeDashoffset = (345.6 * (1 - eased)).toFixed(1);
+        if (gaugeNeedle) gaugeNeedle.setAttribute('transform', `rotate(${(-90 + eased * 180).toFixed(1)} 150 170)`);
+        if (gaugeNum) gaugeNum.textContent = Math.round(eased * 100);
+        if (routeLine) {
+          routeLine.style.strokeDashoffset = (routeLen * (1 - eased)).toFixed(1);
+          const pt = routeLine.getPointAtLength(routeLen * eased);
+          if (routeCar) routeCar.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+        }
+      }
+      ticking = false;
+    }
+    addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+    onScroll();
+  } else {
+    // reduced motion: render final/static states
+    const eb = document.getElementById('expandBox'); if (eb) { eb.style.width = 'min(58vw,800px)'; eb.style.height = 'min(43vw,592px)'; eb.style.borderWidth = '8px'; eb.style.borderColor = 'rgba(15,82,54,.6)'; eb.style.borderRadius = '1.4rem'; }
+    const pn = document.getElementById('phoneNotch'); if (pn) pn.style.opacity = 1;
+    const dp = document.querySelector('[data-panel]'); if (dp) dp.style.opacity = 1;
+    const ga = document.getElementById('gaugeArc'); if (ga) ga.style.strokeDashoffset = 0;
+    const gn = document.getElementById('gaugeNeedle'); if (gn) gn.setAttribute('transform', 'rotate(90 150 170)');
+    const gnum = document.getElementById('gaugeNum'); if (gnum) gnum.textContent = '100';
+    const rl = document.getElementById('routeLine'); if (rl) rl.style.strokeDashoffset = 0;
+  }
+</script>
+
+<!-- ===== Hero vetrina: tilt 3D per-card + foto cliccata nel background ===== -->
+<script>
+(function(){
+  const deck = document.getElementById('heroDeck');
+  const heroBg = document.getElementById('heroBg');
+  if(!deck) return;
+  const cards = Array.from(deck.querySelectorAll('.deck-card'));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let leaveTimer = 0;
+
+  const mask = deck.querySelector('.deck-mask');
+
+  // avvolgo il contenuto di ogni card in un .deck-inner: lo slot resta fermo (hover stabile),
+  // l'inner è la parte che va al centro / cresce / trema / ruota
+  cards.forEach(card => {
+    if (!card.querySelector('.deck-inner')) {
+      const inner = document.createElement('div');
+      inner.className = 'deck-inner';
+      while (card.firstChild) inner.appendChild(card.firstChild);
+      card.appendChild(inner);
+    }
+  });
+  const innerOf = c => c.querySelector('.deck-inner');
+
+  function clearDecor(){ cards.forEach(c => { c.classList.remove('is-zoom'); innerOf(c).style.opacity = ''; }); }
+  function decorate(card){
+    clearTimeout(leaveTimer);
+    clearDecor();
+    card.classList.add('is-zoom');                 // la card sotto la freccia: cresce + tremola sul posto
+    cards.forEach(c => { if (c !== card) innerOf(c).style.opacity = '0'; });   // tutte le altre spariscono
+  }
+
+  cards.forEach(card => {
+    const img = card.querySelector('img');
+    const inner = innerOf(card);
+    let raf = 0, lastE = null;
+    // la freccia si posa (no click) → zoom + tremolio sulla card, le due vicine si allontanano
+    card.addEventListener('pointerenter', (e) => {
+      if (e.pointerType === 'touch') return;
+      decorate(card);                               // qualsiasi card è selezionabile
+    });
+    // per-card "gravity" tilt verso il mouse — resta attivo anche durante lo zoom
+    if (!reduce) {
+      card.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'touch') return;
+        lastE = e;
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          const r = card.getBoundingClientRect();
+          const x = (lastE.clientX - r.left) / r.width - 0.5;
+          const y = (lastE.clientY - r.top) / r.height - 0.5;
+          inner.style.setProperty('--ry', (x*14).toFixed(2) + 'deg');
+          inner.style.setProperty('--rx', (-y*14).toFixed(2) + 'deg');
+          raf = 0;
+        });
+      }, { passive: true });
+    }
+    card.addEventListener('pointerleave', () => {
+      inner.style.removeProperty('--rx');
+      inner.style.removeProperty('--ry');
+      clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(clearDecor, 70);     // se passo alla vicina, decorate() annulla
+    });
+    // click foto → finisce nel background dell'intera sezione (crossfade)
+    if (heroBg && img) {
+      card.addEventListener('click', () => {
+        const src = img.currentSrc || img.src;
+        if (heroBg.getAttribute('src') === src) return;
+        heroBg.style.opacity = '0';
+        const swap = () => { heroBg.removeEventListener('transitionend', swap); heroBg.src = src; requestAnimationFrame(() => { heroBg.style.opacity = ''; }); };
+        heroBg.addEventListener('transitionend', swap);
+        // fallback se transitionend non scatta
+        setTimeout(() => { if (heroBg.getAttribute('src') !== src) { heroBg.removeEventListener('transitionend', swap); heroBg.src = src; heroBg.style.opacity = ''; } }, 600);
+      });
+    }
+  });
+})();
+</script>
+
+<!-- ===== Accelerator pedal: WebAudio engine + live tachometer ===== -->
+<script>
+(function(){
+  const rig = document.getElementById('pedalRig');
+  if(!rig) return;
+  const btn      = document.getElementById('pedalBtn');
+  const needle   = document.getElementById('tachNeedle');
+  const rpmNum   = document.getElementById('rpmNum');
+  const muteBtn  = document.getElementById('muteBtn');
+  const ticksG   = document.getElementById('tachTicks');
+  const tachRed  = document.getElementById('tachRed');
+  const reduce   = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SVGNS    = 'http://www.w3.org/2000/svg';
+  const IDLE = 800, MAX = 8000;
+
+  // --- build ticks (0..8 ×1000) ---
+  const cx=150, cy=175, rT=99;
+  for(let i=0;i<=8;i++){
+    const a = Math.PI*(1 - i/8);                 // 180°→0°
+    const red = i>=7;
+    const ln = document.createElementNS(SVGNS,'line');
+    ln.setAttribute('x1',(cx+Math.cos(a)*rT).toFixed(1)); ln.setAttribute('y1',(cy-Math.sin(a)*rT).toFixed(1));
+    ln.setAttribute('x2',(cx+Math.cos(a)*(rT-13)).toFixed(1)); ln.setAttribute('y2',(cy-Math.sin(a)*(rT-13)).toFixed(1));
+    ln.setAttribute('stroke', red?'#E0463B':'#C9A24B'); ln.setAttribute('stroke-width', red?3:2); ln.setAttribute('stroke-linecap','round');
+    ticksG.appendChild(ln);
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x',(cx+Math.cos(a)*(rT-26)).toFixed(1)); tx.setAttribute('y',(cy-Math.sin(a)*(rT-26)+4).toFixed(1));
+    tx.setAttribute('text-anchor','middle'); tx.setAttribute('font-family','Jost,sans-serif'); tx.setAttribute('font-size','11');
+    tx.setAttribute('fill', red?'#E0463B':'#9aa294'); tx.textContent=i;
+    ticksG.appendChild(tx);
+  }
+  // --- redline arc (from ~6400 rpm to max) ---
+  try {
+    const total = tachRed.getTotalLength(), frac=(MAX-6400)/MAX;
+    tachRed.setAttribute('stroke-dasharray', (total*frac).toFixed(1)+' '+total.toFixed(1));
+    tachRed.setAttribute('stroke-dashoffset', (-(total*(1-frac))).toFixed(1));
+  } catch(e){}
+
+  const rpmToAngle = r => -90 + (r/MAX)*180;     // -90 (left) .. +90 (right)
+  let rpm=IDLE, targetRpm=IDLE, pressed=false;
+
+  // --- WebAudio ---
+  let ac=null, master=null, analyser=null, td=null, buffers=[], muted=false, idx=0;
+  const FILES=['rev-1','rev-2','rev-3','rev-4','rev-5'].map(n=>'assets/audio/'+n+'.mp3');
+  function ensureAudio(){
+    if(ac){ if(ac.state==='suspended') ac.resume(); return; }
+    try { ac = new (window.AudioContext||window.webkitAudioContext)(); } catch(e){ return; }
+    master = ac.createGain(); master.gain.value = muted?0:1;
+    analyser = ac.createAnalyser(); analyser.fftSize=1024; td=new Uint8Array(analyser.fftSize);
+    master.connect(analyser); analyser.connect(ac.destination);
+    FILES.forEach((f,i)=> fetch(f).then(r=>r.arrayBuffer()).then(b=>ac.decodeAudioData(b)).then(buf=>buffers[i]=buf).catch(()=>{}));
+  }
+  function playNext(){
+    if(!ac) return;
+    const buf = buffers[idx % FILES.length]; idx++;
+    if(!buf){ synthBlip(); return; }                 // fallback if not decoded yet
+    const s=ac.createBufferSource(); s.buffer=buf; s.connect(master); s.start();
+  }
+  function synthBlip(){
+    if(!ac) return;
+    const t=ac.currentTime, o=ac.createOscillator(), g=ac.createGain();
+    o.type='sawtooth'; o.frequency.setValueAtTime(70,t);
+    o.frequency.exponentialRampToValueAtTime(440,t+0.22); o.frequency.exponentialRampToValueAtTime(120,t+0.6);
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.5,t+0.04); g.gain.exponentialRampToValueAtTime(0.0001,t+0.7);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t+0.72);
+  }
+
+  function press(){
+    if(pressed) return; pressed=true;
+    rig.classList.add('pressed','revving');
+    ensureAudio(); playNext();
+  }
+  function release(){
+    if(!pressed) return; pressed=false;
+    rig.classList.remove('pressed');
+    setTimeout(()=>{ if(!pressed) rig.classList.remove('revving'); }, 650);
+  }
+  btn.addEventListener('pointerdown', e=>{ e.preventDefault(); press(); });
+  window.addEventListener('pointerup', release);
+  window.addEventListener('pointercancel', release);
+  btn.addEventListener('keydown', e=>{ if(e.code==='Space'||e.code==='Enter'){ e.preventDefault(); press(); } });
+  btn.addEventListener('keyup',   e=>{ if(e.code==='Space'||e.code==='Enter'){ release(); } });
+
+  if (muteBtn) muteBtn.addEventListener('click', ()=>{
+    muted=!muted; if(master) master.gain.value = muted?0:1;
+    muteBtn.classList.toggle('is-muted', muted);
+    muteBtn.setAttribute('aria-label', muted?'Attiva audio':'Disattiva audio');
+  });
+
+  // --- needle driven by live audio amplitude ---
+  function frame(){
+    let amp=0;
+    if(analyser){ analyser.getByteTimeDomainData(td); let s=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; s+=v*v; } amp=Math.sqrt(s/td.length); }
+    if(pressed) targetRpm = Math.min(MAX, Math.max(2600, IDLE + amp*18000));
+    else        targetRpm = IDLE;
+    rpm += (targetRpm-rpm) * (reduce?1:0.16);
+    needle.style.transform = 'rotate('+rpmToAngle(rpm).toFixed(1)+'deg)';
+    rpmNum.textContent = Math.round(rpm/20)*20;
+    rig.classList.toggle('redline', rpm>6400);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<!-- ===== Cinematic scroll-linked entrance (recensioni: sweep diagonale · festa: ventaglio/mazzo di carte) ===== -->
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = Array.from(document.querySelectorAll('.cine'));
+  if (!items.length) return;
+  if (reduce){ items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); return; }
+
+  const clamp = (v,a,b) => v < a ? a : (v > b ? b : v);
+  const lerp  = (a,b,t) => a + (b - a) * t;
+  // back-out con overshoot contenuto: "elegante ma marcato" (~7% oltre, poi assesta a 1)
+  const backOut = (x, s=1.4) => { const c3 = s + 1, p = x - 1; return 1 + c3*p*p*p + s*p*p; };
+
+  // stato di partenza per ogni elemento (lo "scattered/lontano" da cui parte il viaggio).
+  // Ogni coreografia è OUTWARD-ONLY: l'elemento si muove solo verso/dal proprio lato,
+  // così durante il viaggio non entra mai nello spazio dei vicini (zero sovrapposizioni).
+  function startState(el){
+    const type = el.dataset.cine;
+    const i = parseInt(el.dataset.cineI || '0', 10);
+    const narrow = innerWidth < 700;
+
+    if (type === 'sweep'){
+      // RECENSIONI · 3 card: diagonali opposte, lungo viaggio + rotazione + tilt 3D.
+      // Prospettiva PER-ELEMENTO (persp>0) → niente convergenza verso un centro condiviso.
+      const cfg = [
+        { x:-64, y:-16, rot:-13, tz:-170 },   // 0 · da alto-sinistra (solo verso sx)
+        { x:  0, y: 30, rot:  0, tz:-240 },   // 1 · risale dal basso, frontale
+        { x: 64, y: 18, rot: 13, tz:-170 },   // 2 · da basso-destra (solo verso dx)
+      ][i] || { x:0, y:24, rot:0, tz:-200 };
+      const k = narrow ? 0.5 : 1;
+      return { kind:'sweep', persp:1400, tx: cfg.x*k, txU:'vw', ty: cfg.y, rotZ: cfg.rot,
+               rotX: narrow ? 0 : 9, rotY:0, tz: cfg.tz*(narrow?0.5:1), scale:0.85 };
+    }
+
+    if (type === 'unfold'){
+      // FIDUCIA · 6 card: ante che si aprono su cardine 3D, alternate sx/dx.
+      // Solo rotateY attorno al bordo (in-cella) → resta più stretta della colonna, mai sovrapposta.
+      const even = (i % 2) === 0;
+      el.style.transformOrigin = even ? 'left center' : 'right center';
+      return { kind:'unfold', persp:0, ty: 56, rotY: even ? 80 : -80,
+               rotZ: even ? -3 : 3, scale: 0.90 };   // persp:0 → usa la perspective del contenitore #valori
+    }
+
+    if (type === 'arc'){
+      // GIOVANI · 2 colonne: arco laterale lungo con rotazione 3D, ognuna esce dal proprio lato.
+      const left = el.dataset.cineDir === 'left';
+      const k = narrow ? 0.45 : 1;
+      return { kind:'arc', persp:1300, tx:(left?-56:56)*k, txU:'vw',
+               ty:(left?-26:30), rotY:(left?34:-34), rotZ:(left?-5:5), tz:-160, scale:0.9 };
+    }
+
+    // FESTA · 4 video: ventaglio/mazzo di carte. Usa la perspective condivisa di .cine-stage
+    // (la convergenza verso il centro è qui VOLUTA: i video si impilano e poi si aprono).
+    const n = parseInt(el.dataset.cineN || '4', 10);
+    const off = i - (n - 1) / 2;
+    return { kind:'deck', persp:0, tx: -off*100, txU:'%', ty: 30 - Math.abs(off)*6,
+             rotZ: off*12, rotX:0, rotY:0, tz: (-260 - Math.abs(off)*60)*(narrow?0.45:1), scale:0.78 };
+  }
+
+  let data = [];
+  function build(){
+    data = items.map(el => ({ el, s: startState(el), group: el.closest('[data-cine-group]'), settled:false }));
+  }
+  build();
+
+  // stagger normalizzato: l'ultimo item del gruppo si assesta esattamente a fine banda (gp=1)
+  const SPREAD = 0.34;                 // frazione di banda dedicata allo sfalsamento
+  function meta(group){
+    const c = group.querySelectorAll('.cine').length;
+    return { s: c > 1 ? SPREAD / (c - 1) : 0, D: 1 - SPREAD };
+  }
+
+  function build3D(s, inv, e){
+    const p  = s.persp ? `perspective(${s.persp}px) ` : '';
+    const tx = (s.tx || 0) * inv, ty = (s.ty || 0) * inv, tz = (s.tz || 0) * inv;
+    const rX = (s.rotX || 0) * inv, rY = (s.rotY || 0) * inv, rZ = (s.rotZ || 0) * inv;
+    const sc = lerp(s.scale, 1, e);
+    return `${p}translate3d(${tx.toFixed(2)}${s.txU||'px'},${ty.toFixed(2)}px,${tz.toFixed(1)}px)`
+         + ` rotateX(${rX.toFixed(2)}deg) rotateY(${rY.toFixed(2)}deg) rotate(${rZ.toFixed(2)}deg) scale(${sc.toFixed(4)})`;
+  }
+
+  let raf = 0;
+  function update(){
+    raf = 0;
+    const vh = innerHeight;
+    const gp = new Map();    // progresso 0..1 per gruppo (anchor = contenitore non trasformato)
+    const mt = new Map();
+    for (const d of data){
+      const g = d.group; if (!g) continue;
+      if (!gp.has(g)){
+        const r = g.getBoundingClientRect();
+        gp.set(g, clamp((vh - r.top) / (vh * 0.78), 0, 1));
+        mt.set(g, meta(g));
+      }
+      const m  = mt.get(g);
+      const i  = parseInt(d.el.dataset.cineI || '0', 10);
+      const lp = clamp((gp.get(g) - i * m.s) / m.D, 0, 1);
+
+      if (lp >= 1){
+        // RELEASE-ON-SETTLE: a posto → libero il transform inline così tornano vivi
+        // :hover, il tilt 3D delle card e niente artefatti 3D residui. Scrivo una sola volta.
+        if (!d.settled){ d.el.style.transform = ''; d.el.style.opacity = '1'; d.settled = true; }
+        continue;
+      }
+      d.settled = false;
+      const e = backOut(lp);           // overshoot oltre 1 vicino all'arrivo, poi assesta
+      d.el.style.opacity = clamp(lp / 0.32, 0, 1).toFixed(3);
+      d.el.style.transform = build3D(d.s, 1 - e, e);
+    }
+  }
+
+  const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+  addEventListener('scroll', onScroll, { passive:true });
+  addEventListener('resize', () => { build(); onScroll(); }, { passive:true });
+  update();
+})();
+</script>
+
+<!-- ===== Scroll-reactive layer: parole giganti + filo consegna che attraversa le sezioni ===== -->
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  const drifts = Array.from(document.querySelectorAll('[data-driftx]'));
+  if (!drifts.length) return;
+
+  const clamp = (v,a,b) => v < a ? a : (v > b ? b : v);
+  let lastY = scrollY, vel = 0, raf = 0;
+
+  function update(){
+    raf = 0;
+    const y = scrollY, vh = innerHeight;
+    // velocità di scroll ammorbidita -> guida lo skew "vivo" delle parole
+    vel += ((y - lastY) - vel) * 0.18; lastY = y;
+    const v = clamp(vel, -70, 70);
+
+    // parole giganti di sfondo + numeri: drift orizzontale legato allo scroll
+    for (const el of drifts){
+      const host = el.closest('section');
+      if (!host) continue;
+      const r = host.getBoundingClientRect();
+      const prog = (vh - r.top) / (vh + r.height);     // ~0 sotto la view, ~1 sopra
+      const sp = parseFloat(el.dataset.driftx) || 0;
+      // su schermi stretti azzero quasi del tutto il drift orizzontale: la parola resta centrata
+      const mobile = innerWidth < 700;
+      const k = mobile ? 0.04 : Math.min(1, innerWidth / 1200);
+      const x = (prog - 0.5) * sp * k;
+      const dy = (prog - 0.5) * sp * (mobile ? 0.06 : 0.10);
+      const sk = (innerWidth < 700 ? 0 : v * 0.05) * (sp < 0 ? -1 : 1);
+      const base = el.classList.contains('bgword') ? 'translate(-50%,-50%) ' : '';
+      el.style.transform = `${base}translate3d(${x.toFixed(1)}px,${dy.toFixed(1)}px,0) skewX(${sk.toFixed(2)}deg)`;
+    }
+  }
+  const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+  addEventListener('scroll', onScroll, { passive:true });
+  addEventListener('resize', onScroll, { passive:true });
+  update();
+})();
+</script>
+</body>
+</html>
