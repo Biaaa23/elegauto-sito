@@ -706,6 +706,10 @@
 
     <!-- screen: expands big, slides right, becomes the clean in-dash display -->
     <div id="expandBox" class="relative z-10 overflow-hidden pointer-events-none will-change-[width,height,transform]" style="width:208px;height:392px;border-radius:2rem;border:1px solid rgba(201,162,75,.2);box-shadow:0 30px 90px -20px rgba(0,0,0,.7)">
+      <!-- placeholder logo: visibile finché il video non è caricato (sta sotto il video) -->
+      <div id="phonePoster" class="absolute inset-0 flex items-center justify-center" style="background:radial-gradient(120% 120% at 50% 30%, #0a2c1d 0%, #04150e 70%)">
+        <span class="font-script gold-text gold-shine text-3xl md:text-4xl leading-none">ElegAuto</span>
+      </div>
       <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="metadata"></video>
       <div data-expand-veil class="absolute inset-0" style="background:rgba(4,21,14,.3)"></div>
       <div id="phoneNotch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10 flex items-center justify-center gap-2" style="opacity:0">
