@@ -341,6 +341,30 @@
   #pedalBtn:focus-visible #pedalPad{ stroke:#F0D78A; stroke-width:3.5; }
   #pedalHint{ animation: hintPulse 2.2s ease-in-out infinite; }
 
+  /* ===== Mobile "Sgasa ora" FAB — rev trigger when the tachometer pedal is hidden on phones ===== */
+  #revFab{ position:fixed; right:1.25rem; bottom:6rem; z-index:49;
+    display:flex; align-items:center; gap:.55rem;
+    opacity:0; transform:translateY(14px) scale(.85); pointer-events:none;
+    transition:opacity .4s ease, transform .4s cubic-bezier(.2,.8,.25,1); }
+  #revFab.show{ opacity:1; transform:none; pointer-events:auto; }
+  #revFab .rev-label{ font-family:'Jost',sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em;
+    text-transform:uppercase; color:#1a1304; padding:6px 11px; border-radius:999px; white-space:nowrap;
+    background:linear-gradient(135deg,#F0D78A,#C9A24B 55%,#8A6420); border:1px solid rgba(255,247,224,.5);
+    box-shadow:0 6px 16px -6px rgba(0,0,0,.7); }
+  #revBtn{ position:relative; width:58px; height:58px; border-radius:50%; flex:0 0 auto;
+    background:radial-gradient(circle at 50% 32%, #0c3826, #04150e 78%); border:2px solid #C9A24B;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    -webkit-tap-highlight-color:transparent; padding:0; outline:none;
+    box-shadow:0 10px 26px -8px rgba(0,0,0,.8); }
+  #revBtn::before{ content:""; position:absolute; inset:-2px; border-radius:50%; pointer-events:none;
+    animation:revRing 1.9s ease-out infinite; }
+  @keyframes revRing{ 0%{ box-shadow:0 0 0 0 rgba(201,162,75,.55); } 70%{ box-shadow:0 0 0 14px rgba(201,162,75,0); } 100%{ box-shadow:0 0 0 0 rgba(201,162,75,0); } }
+  #revFab .rev-pad{ transition:transform .12s cubic-bezier(.3,.7,.3,1); }
+  #revFab.pressing .rev-pad{ transform:translateY(2px) scale(.9); }
+  #revFab.pressing #revBtn{ border-color:#F0D78A; }
+  #revBtn:focus-visible{ outline:2px solid #F0D78A; outline-offset:3px; }
+  @media (prefers-reduced-motion:reduce){ #revBtn::before{ animation:none; } }
+
   /* ===== Hero vetrina — car cards scrolling to the right ===== */
   #heroBg{ transition:opacity .5s ease; z-index:0; }
   #heroDeck .deck-mask{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent);
@@ -1216,6 +1240,30 @@
   <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 </a>
 
+<!-- ===== "Sgasa ora" (mobile): trigger del motore quando il contagiri/pedale è nascosto su telefono ===== -->
+<div id="revFab" class="md:hidden">
+  <span class="rev-label" aria-hidden="true">Sgasa ora</span>
+  <button id="revBtn" type="button" aria-label="Sgasa: ascolta il motore della Mercedes-AMG A45">
+    <svg class="rev-pad" width="30" height="34" viewBox="0 0 200 230" aria-hidden="true">
+      <defs>
+        <linearGradient id="revPadGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23282c"/><stop offset="1" stop-color="#05080b"/></linearGradient>
+        <linearGradient id="revGoldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0D78A"/><stop offset="1" stop-color="#8A6420"/></linearGradient>
+      </defs>
+      <!-- chevron: "accelera" -->
+      <path d="M70 36 L100 14 L130 36" fill="none" stroke="#F0D78A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+      <!-- pedale (senza contagiri) -->
+      <rect x="40" y="54" width="120" height="150" rx="18" fill="url(#revPadGrad)" stroke="#C9A24B" stroke-width="3"/>
+      <g stroke="#2a3034" stroke-width="7" stroke-linecap="round">
+        <line x1="58" y1="96" x2="142" y2="96"/><line x1="58" y1="118" x2="142" y2="118"/>
+        <line x1="58" y1="140" x2="142" y2="140"/><line x1="58" y1="162" x2="142" y2="162"/>
+        <line x1="58" y1="184" x2="142" y2="184"/>
+      </g>
+      <rect x="69" y="66" width="62" height="20" rx="5" fill="url(#revGoldGrad)"/>
+      <text x="100" y="81" text-anchor="middle" font-family="Jost,sans-serif" font-size="13" font-weight="700" fill="#04150E">A45</text>
+    </svg>
+  </button>
+</div>
+
 <script>
   // year
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1690,6 +1738,8 @@
       if (navEl) navEl.style.display = cat.items.length > 1 ? '' : 'none';
       // the interactive pedal + tachometer only belong to the German sports car
       if (carPedal) { carPedal.classList.toggle('hidden', !it.pedal); if (it.pedal) { carPedal.style.opacity = ((parseFloat(dataPanel.style.opacity) || 0) * 0.6).toFixed(2); } else { carPedal.classList.remove('revving','pressed','redline'); } }
+      // mobile "Sgasa ora" FAB follows the selected car (only the Mercedes has the pedal)
+      if (window.__revSetMerc) window.__revSetMerc(!!it.pedal);
       setPhoneVid(it.vid);
       catTabs.forEach(t => { const a = t.dataset.cat === curCat; t.style.background = a ? 'rgba(201,162,75,.18)' : ''; t.style.borderColor = a ? 'rgba(201,162,75,.8)' : ''; });
     }
@@ -1990,6 +2040,32 @@
   window.addEventListener('pointercancel', release);
   btn.addEventListener('keydown', e=>{ if(e.code==='Space'||e.code==='Enter'){ e.preventDefault(); press(); } });
   btn.addEventListener('keyup',   e=>{ if(e.code==='Space'||e.code==='Enter'){ release(); } });
+
+  // --- mobile "Sgasa ora" FAB: same engine, shown only on the Mercedes while its section is in view ---
+  const fab = document.getElementById('revFab');
+  const fabBtn = document.getElementById('revBtn');
+  if (fab && fabBtn){
+    let mercOn = !rig.classList.contains('hidden'), inView = false;
+    const sync = ()=> fab.classList.toggle('show', mercOn && inView);
+    fabBtn.addEventListener('pointerdown', e=>{ e.preventDefault(); fab.classList.add('pressing'); press(); });
+    const fabUp = ()=> fab.classList.remove('pressing');
+    window.addEventListener('pointerup', fabUp);
+    window.addEventListener('pointercancel', fabUp);
+    // exposed so the catalog can flag when the Mercedes (the only car with a pedal) is selected
+    window.__revSetMerc = v=>{ mercOn = !!v; sync(); };
+    const expSec = document.getElementById('expandVid');
+    // the pinned car panel is on screen while the 300vh section straddles the viewport;
+    // show the FAB once we are inside it (and a touch below, where the pedal would sit)
+    const checkInView = ()=>{
+      if(!expSec){ if(!inView){ inView=true; sync(); } return; }
+      const r = expSec.getBoundingClientRect(), vh = innerHeight;
+      const nv = r.top <= vh*0.35 && r.bottom >= vh*0.5;
+      if(nv !== inView){ inView = nv; sync(); }
+    };
+    window.addEventListener('scroll', checkInView, { passive:true });
+    window.addEventListener('resize', checkInView);
+    checkInView();
+  }
 
   if (muteBtn) muteBtn.addEventListener('click', ()=>{
     muted=!muted; if(master) master.gain.value = muted?0:1;
