@@ -369,6 +369,9 @@
   #revFab.pressing #revBtn{ border-color:#F0D78A; }
   #revBtn:focus-visible{ outline:2px solid #F0D78A; outline-offset:3px; }
   @media (prefers-reduced-motion:reduce){ #revBtn::before{ animation:none; } }
+  /* solo mobile: da desktop resta il pedale+contagiri (#pedalRig), niente pallino.
+     serve specificità id perché #revFab{display:flex} batterebbe la classe .md:hidden */
+  @media (min-width:768px){ #revFab{ display:none !important; } }
 
   /* ===== Hero vetrina — car cards scrolling to the right ===== */
   #heroBg{ transition:opacity .5s ease; z-index:0; }
