@@ -343,14 +343,19 @@
 
   /* ===== Mobile "Sgasa ora" FAB — rev trigger when the tachometer pedal is hidden on phones ===== */
   #revFab{ position:fixed; right:1.25rem; bottom:6rem; z-index:49;
-    display:flex; align-items:center; gap:.55rem;
+    display:flex; flex-direction:column; align-items:flex-end; gap:.45rem;
     opacity:0; transform:translateY(14px) scale(.85); pointer-events:none;
     transition:opacity .4s ease, transform .4s cubic-bezier(.2,.8,.25,1); }
   #revFab.show{ opacity:1; transform:none; pointer-events:auto; }
-  #revFab .rev-label{ font-family:'Jost',sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em;
-    text-transform:uppercase; color:#1a1304; padding:6px 11px; border-radius:999px; white-space:nowrap;
-    background:linear-gradient(135deg,#F0D78A,#C9A24B 55%,#8A6420); border:1px solid rgba(255,247,224,.5);
-    box-shadow:0 6px 16px -6px rgba(0,0,0,.7); }
+  /* label: hint testuale sopra il bottone, non riempito d'oro, appare solo per qualche secondo */
+  #revFab .rev-label{ font-family:'Jost',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; color:#F0D78A; padding:5px 11px; border-radius:999px; white-space:nowrap;
+    background:rgba(4,21,14,.72); border:1px solid rgba(201,162,75,.38);
+    box-shadow:0 6px 18px -8px rgba(0,0,0,.7); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    opacity:0; pointer-events:none; }
+  #revFab.show .rev-label{ animation:revHint 3.4s ease forwards; }
+  @keyframes revHint{ 0%{ opacity:0; transform:translateY(7px); } 12%{ opacity:1; transform:none; }
+    66%{ opacity:1; transform:none; } 100%{ opacity:0; transform:translateY(-3px); } }
   #revBtn{ position:relative; width:58px; height:58px; border-radius:50%; flex:0 0 auto;
     background:radial-gradient(circle at 50% 32%, #0c3826, #04150e 78%); border:2px solid #C9A24B;
     display:flex; align-items:center; justify-content:center; cursor:pointer;
@@ -1716,7 +1721,7 @@
         { sup: 'BENVENUTO', name: 'Showroom 360°', specs: 'Vienilo a vivere di persona', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4' },
       ]},
       vetture: { title: 'Alcuni dei nostri gioiellini', items: [
-        { sup: 'SPORTIVA TEDESCA', name: 'Mercedes-AMG A45 4MATIC', specs: 'Automatica · 1.9 · 180 kW · 275 CV', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/auto2.mp4', pedal: true },
+        { sup: 'SPORTIVA TEDESCA', name: 'Mercedes-AMG A45 4MATIC', specs: 'Automatica · 2.0 · 280 kW · 381 CV', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/auto2.mp4', pedal: true },
         { sup: 'ICONA ITALIANA', name: 'Alfa Romeo Giulietta 1.4 MultiAir', specs: 'Benzina · 170 CV · Motore MultiAir', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/auto3.mp4' },
         { sup: 'SPORTIVA ITALIANA', name: 'Abarth 595 Yamaha Factory Racing', specs: 'Edizione speciale · Yamaha Factory Racing', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/abarth595.mp4' },
         { sup: 'COMPATTA TEDESCA', name: 'Volkswagen Golf R-Line', specs: '1.6 TDI · 115 CV · 2018', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/golf_rline.mp4' },
