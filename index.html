@@ -2007,14 +2007,24 @@
   // --- WebAudio ---
   let ac=null, master=null, analyser=null, td=null, buffers=[], muted=false, idx=0;
   const FILES=['rev-1','rev-2','rev-3','rev-4','rev-5'].map(n=>'assets/audio/'+n+'.mp3');
+  // prefetch the raw bytes at load so only the (fast) decode is left for the first press
+  const raw=[]; FILES.forEach((f,i)=> fetch(f).then(r=>r.arrayBuffer()).then(b=>raw[i]=b).catch(()=>{}));
   function ensureAudio(){
     if(ac){ if(ac.state==='suspended') ac.resume(); return; }
     try { ac = new (window.AudioContext||window.webkitAudioContext)(); } catch(e){ return; }
     master = ac.createGain(); master.gain.value = muted?0:1;
     analyser = ac.createAnalyser(); analyser.fftSize=1024; td=new Uint8Array(analyser.fftSize);
     master.connect(analyser); analyser.connect(ac.destination);
-    FILES.forEach((f,i)=> fetch(f).then(r=>r.arrayBuffer()).then(b=>ac.decodeAudioData(b)).then(buf=>buffers[i]=buf).catch(()=>{}));
+    // decode from the prefetched bytes when available, otherwise fetch on demand
+    FILES.forEach((f,i)=>{
+      const bytes = raw[i] ? Promise.resolve(raw[i].slice(0)) : fetch(f).then(r=>r.arrayBuffer());
+      bytes.then(b=>ac.decodeAudioData(b)).then(buf=>buffers[i]=buf).catch(()=>{});
+    });
   }
+  // warm up the audio pipeline on the first user gesture anywhere on the page, so the engine
+  // sample is decoded and ready well before the pedal is pressed (no sawtooth "Tum" on click 1)
+  const warm=()=>{ ensureAudio(); ['pointerdown','touchstart','keydown','scroll'].forEach(ev=>window.removeEventListener(ev,warm,true)); };
+  ['pointerdown','touchstart','keydown','scroll'].forEach(ev=>window.addEventListener(ev,warm,{capture:true,passive:true}));
   function playNext(){
     if(!ac) return;
     const buf = buffers[idx % FILES.length]; idx++;
