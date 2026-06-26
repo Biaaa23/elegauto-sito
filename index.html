@@ -706,7 +706,7 @@
 
     <!-- screen: expands big, slides right, becomes the clean in-dash display -->
     <div id="expandBox" class="relative z-10 overflow-hidden pointer-events-none will-change-[width,height,transform]" style="width:208px;height:392px;border-radius:2rem;border:1px solid rgba(201,162,75,.2);box-shadow:0 30px 90px -20px rgba(0,0,0,.7)">
-      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="assets/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="auto"></video>
+      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="metadata"></video>
       <div data-expand-veil class="absolute inset-0" style="background:rgba(4,21,14,.3)"></div>
       <div id="phoneNotch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10 flex items-center justify-center gap-2" style="opacity:0">
         <span class="block w-2 h-2 rounded-full" style="background:radial-gradient(circle at 35% 35%, #2a4a3a, #04130c)"></span>
@@ -1083,7 +1083,7 @@
 
     <div class="m-carousel m-carousel-video grid gap-3 sm:gap-6 max-w-6xl mx-auto cine-stage" data-cine-group="deck" style="grid-template-columns:repeat(4,minmax(0,1fr))">
       <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="0" data-cine-n="4">
-        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lazy-video" data-src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/feedback-1.mp4" muted loop playsinline webkit-playsinline preload="none"></video>
         <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
         <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
           <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
@@ -1092,7 +1092,7 @@
         <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
       </figure>
       <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="1" data-cine-n="4">
-        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/feedback-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
         <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
         <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
           <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
@@ -1101,7 +1101,7 @@
         <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
       </figure>
       <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="2" data-cine-n="4">
-        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-3.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/feedback-3.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
         <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
         <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
           <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
@@ -1110,7 +1110,7 @@
         <span class="absolute top-4 right-4 text-[10px] tracking-widest text-emerald-950 bg-gold/90 rounded-full px-3 py-1">CLIENTE SODDISFATTO</span>
       </figure>
       <figure class="cine group relative rounded-[2rem] overflow-hidden border border-gold/25 bg-emerald-900/40 aspect-[9/16]" data-cine="deck" data-cine-i="3" data-cine-n="4">
-        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/video/feedback-4.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <video class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/feedback-4.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
         <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(4,21,14,.85))"></div>
         <figcaption class="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-ivory">
           <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
@@ -1649,17 +1649,17 @@
     // catalog (browsable categories)
     const CATALOG = {
       showroom: { title: 'Il nostro salone', items: [
-        { sup: 'BENVENUTO', name: 'Showroom 360°', specs: 'Vienilo a vivere di persona', vid: 'assets/video/salone_entrata.mp4' },
+        { sup: 'BENVENUTO', name: 'Showroom 360°', specs: 'Vienilo a vivere di persona', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4' },
       ]},
       vetture: { title: 'Alcuni dei nostri gioiellini', items: [
-        { sup: 'SPORTIVA TEDESCA', name: 'Mercedes-AMG A45 4MATIC', specs: 'Automatica · 1.9 · 180 kW · 275 CV', vid: 'assets/video/auto2.mp4', pedal: true },
-        { sup: 'ICONA ITALIANA', name: 'Alfa Romeo Giulietta 1.4 MultiAir', specs: 'Benzina · 170 CV · Motore MultiAir', vid: 'assets/video/auto3.mp4' },
-        { sup: 'SPORTIVA ITALIANA', name: 'Abarth 595 Yamaha Factory Racing', specs: 'Edizione speciale · Yamaha Factory Racing', vid: 'assets/video/abarth595.mp4' },
-        { sup: 'COMPATTA TEDESCA', name: 'Volkswagen Golf R-Line', specs: '1.6 TDI · 115 CV · 2018', vid: 'assets/video/golf_rline.mp4' },
-        { sup: 'BERLINA PREMIUM', name: 'Audi A3 Sportback', specs: 'Eleganza · Comfort premium', vid: 'assets/video/audi_a3.mp4' },
-        { sup: 'SUV FRANCESE', name: 'Peugeot 3008 Allure Pack', specs: 'SUV · Allestimento Allure Pack', vid: 'assets/video/peugeot3008.mp4' },
-        { sup: 'SUV AMERICANO', name: 'Jeep Compass Limited', specs: '1.6 Multijet Diesel · Allestimento Limited', vid: 'assets/video/jeep_compass.mp4' },
-        { sup: 'CITYCAR ELETTRICA', name: 'Fiat 500 Elettrica Icon', specs: 'Elettrica · 42 kWh · 95 CV (43 kW) · 2021', vid: 'assets/video/fiat500.mp4' },
+        { sup: 'SPORTIVA TEDESCA', name: 'Mercedes-AMG A45 4MATIC', specs: 'Automatica · 1.9 · 180 kW · 275 CV', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/auto2.mp4', pedal: true },
+        { sup: 'ICONA ITALIANA', name: 'Alfa Romeo Giulietta 1.4 MultiAir', specs: 'Benzina · 170 CV · Motore MultiAir', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/auto3.mp4' },
+        { sup: 'SPORTIVA ITALIANA', name: 'Abarth 595 Yamaha Factory Racing', specs: 'Edizione speciale · Yamaha Factory Racing', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/abarth595.mp4' },
+        { sup: 'COMPATTA TEDESCA', name: 'Volkswagen Golf R-Line', specs: '1.6 TDI · 115 CV · 2018', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/golf_rline.mp4' },
+        { sup: 'BERLINA PREMIUM', name: 'Audi A3 Sportback', specs: 'Eleganza · Comfort premium', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/audi_a3.mp4' },
+        { sup: 'SUV FRANCESE', name: 'Peugeot 3008 Allure Pack', specs: 'SUV · Allestimento Allure Pack', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/peugeot3008.mp4' },
+        { sup: 'SUV AMERICANO', name: 'Jeep Compass Limited', specs: '1.6 Multijet Diesel · Allestimento Limited', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/jeep_compass.mp4' },
+        { sup: 'CITYCAR ELETTRICA', name: 'Fiat 500 Elettrica Icon', specs: 'Elettrica · 42 kWh · 95 CV (43 kW) · 2021', vid: 'https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/fiat500.mp4' },
       ]},
     };
     let curCat = 'showroom', curIdx = 0;
