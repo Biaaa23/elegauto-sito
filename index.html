@@ -742,7 +742,7 @@
       <div id="phonePoster" class="absolute inset-0 flex items-center justify-center" style="background:radial-gradient(120% 120% at 50% 30%, #0a2c1d 0%, #04150e 70%)">
         <span class="font-script gold-text gold-shine text-3xl md:text-4xl leading-none">ElegAuto</span>
       </div>
-      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="metadata"></video>
+      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="auto"></video>
       <div data-expand-veil class="absolute inset-0" style="background:rgba(4,21,14,.3)"></div>
       <div id="phoneNotch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10 flex items-center justify-center gap-2" style="opacity:0">
         <span class="block w-2 h-2 rounded-full" style="background:radial-gradient(circle at 35% 35%, #2a4a3a, #04130c)"></span>
@@ -1735,6 +1735,25 @@
       ]},
     };
     let curCat = 'showroom', curIdx = 0;
+    // --- prefetch catalog videos so switching car is instant (no fresh R2 round-trip on click) ---
+    const vidPrefetch = new Map();
+    function prefetchVid(src) {
+      if (!src || vidPrefetch.has(src)) return;
+      const pv = document.createElement('video');
+      pv.muted = true; pv.preload = 'auto'; pv.setAttribute('playsinline', ''); pv.src = src;
+      try { pv.load(); } catch (e) {}
+      vidPrefetch.set(src, pv);
+    }
+    function prefetchNeighbours() {
+      const items = CATALOG[curCat].items, n = items.length;
+      if (n < 2) return;
+      prefetchVid(items[(curIdx + 1) % n].vid);
+      prefetchVid(items[(curIdx - 1 + n) % n].vid);
+    }
+    // after the page settles, warm the whole "vetture" catalog in the background
+    const warmAllVetture = () => CATALOG.vetture.items.forEach(it => prefetchVid(it.vid));
+    if ('requestIdleCallback' in window) requestIdleCallback(warmAllVetture, { timeout: 4000 });
+    else addEventListener('load', () => setTimeout(warmAllVetture, 1500));
     const $super = dataPanel.querySelector('[data-super]'), $title = dataPanel.querySelector('[data-cat-title]'), $name = dataPanel.querySelector('[data-name]'), $specs = dataPanel.querySelector('[data-specs]'), $idx = dataPanel.querySelector('[data-idx]');
     const catTabs = dataPanel.querySelectorAll('.cat-tab');
     const carPedal = document.getElementById('pedalRig');
@@ -1749,6 +1768,7 @@
       // mobile "Sgasa ora" FAB follows the selected car (only the Mercedes has the pedal)
       if (window.__revSetMerc) window.__revSetMerc(!!it.pedal);
       setPhoneVid(it.vid);
+      prefetchNeighbours();
       catTabs.forEach(t => { const a = t.dataset.cat === curCat; t.style.background = a ? 'rgba(201,162,75,.18)' : ''; t.style.borderColor = a ? 'rgba(201,162,75,.8)' : ''; });
     }
     catTabs.forEach(t => t.addEventListener('click', () => { curCat = t.dataset.cat; curIdx = 0; renderCat(); }));
