@@ -757,7 +757,7 @@
       <div id="phonePoster" class="absolute inset-0 flex items-center justify-center" style="background:radial-gradient(120% 120% at 50% 30%, #0a2c1d 0%, #04150e 70%)">
         <span class="font-script gold-text gold-shine text-3xl md:text-4xl leading-none">ElegAuto</span>
       </div>
-      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="auto"></video>
+      <video id="phoneVideo" class="absolute inset-0 w-full h-full object-cover" src="https://pub-138152d5a12340b9b10ec7612372f1f3.r2.dev/video/salone_entrata.mp4?v=7" muted loop playsinline webkit-playsinline preload="metadata"></video>
       <div data-expand-veil class="absolute inset-0" style="background:rgba(4,21,14,.3)"></div>
       <div id="phoneNotch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10 flex items-center justify-center gap-2" style="opacity:0">
         <span class="block w-2 h-2 rounded-full" style="background:radial-gradient(circle at 35% 35%, #2a4a3a, #04130c)"></span>
@@ -1537,15 +1537,18 @@
   // --- force EVERY video to autoplay muted, no play button (runs regardless of reduced-motion) ---
   (function autoplayAllVideos() {
     const playVid = (v) => { try { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute('playsinline',''); v.removeAttribute('controls'); const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {} };
-    const playAll = () => document.querySelectorAll('video').forEach(playVid);
+    const inView = (v) => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
+    // Riproduci (e quindi scarica) solo i video in vista: gli altri partono quando
+    // entrano in viewport tramite l'IntersectionObserver piu' sotto.
+    const playAll = () => document.querySelectorAll('video').forEach(v => { if (inView(v)) playVid(v); });
     const wire = (v) => {
       v.muted = true; v.removeAttribute('controls');
-      ['loadedmetadata','loadeddata','canplay','canplaythrough','stalled','suspend'].forEach(ev => v.addEventListener(ev, () => playVid(v)));
-      if (v.preload === 'none' || v.preload === 'metadata') v.preload = 'auto';
-      v.load && v.load();
+      ['loadedmetadata','loadeddata','canplay','canplaythrough','stalled','suspend'].forEach(ev => v.addEventListener(ev, () => { if (inView(v)) playVid(v); }));
+      // Scarica i byte solo per i video gia' in viewport; gli altri restano "metadata"
+      // finche' non entrano in vista (evita il download di TUTTI i video al load — killer su mobile).
+      if (inView(v)) { v.preload = 'auto'; v.load && v.load(); }
     };
-    const inView = (v) => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
-    document.querySelectorAll('video').forEach(v => { wire(v); playVid(v); });
+    document.querySelectorAll('video').forEach(v => { wire(v); if (inView(v)) playVid(v); });
     // persistent watchdog: keep retrying any paused, in-view video (covers Safari's
     // refusal to autoplay while the reveal fade-in is still in progress)
     setInterval(() => { document.querySelectorAll('video').forEach(v => { if (v.paused && !v.ended && inView(v)) playVid(v); }); }, 350);
@@ -1792,9 +1795,15 @@
     };
     let curCat = 'showroom', curIdx = 0;
     // --- prefetch catalog videos so switching car is instant (no fresh R2 round-trip on click) ---
+    // Solo su desktop con rete veloce: su mobile / Save-Data il prefetch di tutti i video
+    // satura la connessione e affossa le prestazioni (LCP / Speed-Index). pointer:fine
+    // distingue il desktop dal mobile (anche sotto l'emulazione mobile di Lighthouse).
+    const __net = navigator.connection || {};
+    const CAN_PREFETCH = matchMedia('(pointer:fine)').matches && !__net.saveData
+                         && (!__net.effectiveType || __net.effectiveType === '4g');
     const vidPrefetch = new Map();
     function prefetchVid(src) {
-      if (!src || vidPrefetch.has(src)) return;
+      if (!src || !CAN_PREFETCH || vidPrefetch.has(src)) return;
       const pv = document.createElement('video');
       pv.muted = true; pv.preload = 'auto'; pv.setAttribute('playsinline', ''); pv.src = src;
       try { pv.load(); } catch (e) {}
