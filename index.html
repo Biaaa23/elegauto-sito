@@ -1715,8 +1715,48 @@
     const transLink = document.querySelector('[data-trans-link]');
     const dataStreaks = document.querySelector('[data-streaks]');
     const dataPanel = document.querySelector('[data-panel]');
-    const tryPlay = () => { if (!phoneVideoEl) return; phoneVideoEl.muted = true; const p = phoneVideoEl.play(); if (p && p.catch) p.catch(() => {}); };
-    const setPhoneVid = (src) => { if (phoneVideoEl && !phoneVideoEl.src.endsWith(src)) { phoneVideoEl.src = src; phoneVideoEl.load(); } tryPlay(); };
+    // double-buffer: a twin <video> stacked on top so we can CROSSFADE between cars.
+    // The outgoing frame stays visible until the incoming one is decoded, then the
+    // incoming fades in over it — eliminating the empty-poster gap of an in-place src swap.
+    let phoneVidActive = phoneVideoEl, phoneVidBuffer = null;
+    if (phoneVideoEl) {
+      phoneVidBuffer = phoneVideoEl.cloneNode(false);
+      phoneVidBuffer.removeAttribute('id');
+      phoneVidBuffer.removeAttribute('src');
+      phoneVidBuffer.style.opacity = '0';
+      phoneVidBuffer.style.transition = 'opacity .45s ease';
+      phoneVideoEl.style.transition = 'opacity .45s ease';
+      phoneVideoEl.parentNode.insertBefore(phoneVidBuffer, phoneVideoEl.nextSibling);
+    }
+    const tryPlay = (v) => { v = (v && v.play) ? v : phoneVidActive; if (!v) return; v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    const baseSrc = (s) => (s || '').replace(/\?.*$/, '');   // ignore cache-busting query (?v=7)
+    let swapToken = 0;
+    const setPhoneVid = (src) => {
+      if (!phoneVideoEl) { return; }
+      if (baseSrc(phoneVidActive.src).endsWith(src)) { tryPlay(phoneVidActive); return; }
+      const incoming = phoneVidBuffer, outgoing = phoneVidActive;
+      const token = ++swapToken;                 // a newer swap supersedes this one
+      incoming.style.zIndex = '2'; outgoing.style.zIndex = '1';
+      if (!baseSrc(incoming.src).endsWith(src)) { incoming.src = src; incoming.load(); }
+      tryPlay(incoming);
+      // poll readyState (events are unreliable here — the global autoplay watchdog
+      // keeps calling load()/play() on every video and swallows canplay/loadeddata)
+      let tries = 0;
+      const waitReady = () => {
+        if (token !== swapToken) return;                 // cancelled by a later click
+        if (incoming.readyState >= 2 || tries++ > 150) {  // ready, or ~2.5s safety cap
+          tryPlay(incoming);
+          incoming.style.opacity = '1';                  // fade incoming in (on top, z2)
+          phoneVidActive = incoming; phoneVidBuffer = outgoing;
+          // outgoing stays fully opaque underneath until incoming has covered it,
+          // so the green poster never peeks through during the crossfade
+          setTimeout(() => { if (token === swapToken) outgoing.style.opacity = '0'; }, 470);
+          return;
+        }
+        setTimeout(waitReady, 32);   // poll (setTimeout, not rAF: keeps working if the tab is hidden)
+      };
+      waitReady();
+    };
     if (phoneVideoEl) { phoneVideoEl.addEventListener('canplay', tryPlay); phoneVideoEl.addEventListener('loadeddata', tryPlay); tryPlay(); }
     // catalog (browsable categories)
     const CATALOG = {
