@@ -2105,8 +2105,18 @@
   // --- WebAudio ---
   let ac=null, master=null, analyser=null, td=null, buffers=[], muted=false, idx=0;
   const FILES=['rev-1','rev-2','rev-3','rev-4','rev-5'].map(n=>'assets/audio/'+n+'.mp3');
-  // prefetch the raw bytes at load so only the (fast) decode is left for the first press
-  const raw=[]; FILES.forEach((f,i)=> fetch(f).then(r=>r.arrayBuffer()).then(b=>raw[i]=b).catch(()=>{}));
+  // NB: NON fare prefetch degli mp3 al load (finivano nella catena critica di rete e
+  // peggioravano LCP/SpeedIndex su mobile). I byte vengono scaricati+decodificati al
+  // primo gesto utente (vedi `warm` -> ensureAudio), quindi sono pronti prima del pedale.
+  const raw=[];        // bytes decodificati in cache
+  const rawP=[];       // promise dei fetch in volo, per non scaricare due volte
+  function fetchRaw(i){
+    if(raw[i]) return Promise.resolve(raw[i]);
+    if(!rawP[i]) rawP[i]=fetch(FILES[i]).then(r=>r.arrayBuffer()).then(b=>(raw[i]=b)).catch(()=>{});
+    return rawP[i];
+  }
+  // dato che il prefetch non e' piu' eager, anticipa il fetch dei byte appena parte il warm
+  function prefetchRaw(){ FILES.forEach((f,i)=>fetchRaw(i)); }
   function ensureAudio(){
     if(ac){ if(ac.state==='suspended') ac.resume(); return; }
     try { ac = new (window.AudioContext||window.webkitAudioContext)(); } catch(e){ return; }
@@ -2115,13 +2125,13 @@
     master.connect(analyser); analyser.connect(ac.destination);
     // decode from the prefetched bytes when available, otherwise fetch on demand
     FILES.forEach((f,i)=>{
-      const bytes = raw[i] ? Promise.resolve(raw[i].slice(0)) : fetch(f).then(r=>r.arrayBuffer());
-      bytes.then(b=>ac.decodeAudioData(b)).then(buf=>buffers[i]=buf).catch(()=>{});
+      fetchRaw(i).then(b=> b ? ac.decodeAudioData(b.slice(0)) : Promise.reject())
+                 .then(buf=>buffers[i]=buf).catch(()=>{});
     });
   }
   // warm up the audio pipeline on the first user gesture anywhere on the page, so the engine
   // sample is decoded and ready well before the pedal is pressed (no sawtooth "Tum" on click 1)
-  const warm=()=>{ ensureAudio(); ['pointerdown','touchstart','keydown','scroll'].forEach(ev=>window.removeEventListener(ev,warm,true)); };
+  const warm=()=>{ prefetchRaw(); ensureAudio(); ['pointerdown','touchstart','keydown','scroll'].forEach(ev=>window.removeEventListener(ev,warm,true)); };
   ['pointerdown','touchstart','keydown','scroll'].forEach(ev=>window.addEventListener(ev,warm,{capture:true,passive:true}));
   function playNext(){
     if(!ac) return;
