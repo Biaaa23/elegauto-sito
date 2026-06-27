@@ -16,4 +16,4 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404); res.end('not found');
   }
-}).listen(4599, () => console.log('listening on 4599'));
+}).listen(process.env.PORT || 4599, function () { console.log('listening on ' + this.address().port); });

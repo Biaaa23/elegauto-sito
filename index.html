@@ -13,7 +13,6 @@
 <meta name="author" content="ElegAuto" />
 
 <!-- Favicon: silhouette auto del logo ElegAuto (oro su smeraldo) -->
-<link rel="icon" href="favicon.ico?v=3" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png?v=3" />
 <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png?v=3" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=3" />
@@ -85,6 +84,20 @@
   html { scroll-behavior: smooth; }
   body { background: #04150E; overflow-x: hidden; }
   ::selection { background: #C9A24B; color: #04150E; }
+
+  /* <picture> wrappers must not alter layout: the <img> behaves as direct child. */
+  picture { display: contents; }
+
+  /* Keyboard focus: visible gold ring, only for keyboard users (not mouse clicks). */
+  :focus-visible { outline: 2px solid #F0D78A; outline-offset: 3px; border-radius: 2px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  /* Skip-to-content link: off-screen until focused via keyboard. */
+  .skip-link { position: fixed; top: -100px; left: 16px; z-index: 100;
+    background: #04150E; color: #F0D78A; border: 1px solid #C9A24B;
+    padding: 10px 18px; border-radius: 8px; font: 600 14px 'Jost',sans-serif;
+    letter-spacing: .04em; transition: top .2s ease; }
+  .skip-link:focus { top: 16px; }
 
   /* Gold metallic text */
   .gold-text {
@@ -529,6 +542,7 @@
 </head>
 
 <body class="font-sans text-ivory antialiased">
+<a href="#hero" class="skip-link">Vai al contenuto</a>
 <div id="scrollbar" aria-hidden="true"></div>
 
 <!-- ===================== NAVBAR ===================== -->
@@ -581,9 +595,10 @@
 </header>
 
 <!-- ===================== HERO ===================== -->
+<main id="main">
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
   <!-- background layers — la foto cliccata finisce qui (default: Golf R-Line, faro) -->
-  <img id="heroBg" src="assets/img/car-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+  <img id="heroBg" src="assets/img/webp/car-2.webp" alt="" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(4,21,14,.58) 0%, rgba(4,21,14,.8) 100%), radial-gradient(120% 90% at 50% 0%, rgba(15,82,54,.55) 0%, rgba(4,21,14,.78) 60%, #04150E 100%);"></div>
   <div class="absolute inset-0 opacity-[.5]" style="background:radial-gradient(60% 50% at 70% 60%, rgba(201,162,75,.18), transparent 70%);"></div>
   <!-- ghost word -->
@@ -617,25 +632,25 @@
     <div id="heroDeck" class="relative z-10 mx-auto mt-14 w-full max-w-md lg:mt-0 lg:absolute lg:right-0 lg:top-[52%] lg:w-[46%] lg:max-w-none">
       <div class="deck-mask overflow-hidden py-5">
         <div class="deck-track">
-          <figure class="deck-card"><img src="assets/img/car-18.jpg" alt="Fiat Panda — ElegAuto"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-3.jpg" alt="Fiat 500e — ElegAuto"><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-22.jpg" alt="Audi A3 — ElegAuto"><figcaption class="deck-badge">Audi A3</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-20.jpg" alt="Abarth 500 — ElegAuto" loading="lazy"><figcaption class="deck-badge">Abarth 500</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-6.jpg" alt="Peugeot 3008 — ElegAuto" loading="lazy"><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-11.jpg" alt="Fiat Panda — ElegAuto" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-17.jpg" alt="Volkswagen Golf — ElegAuto" loading="lazy"><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-10.jpg" alt="Alfa Romeo Giulietta — ElegAuto" loading="lazy"><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
-          <figure class="deck-card"><img src="assets/img/car-7.jpg" alt="Jeep Compass — ElegAuto" loading="lazy"><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-18-640.webp 640w, assets/img/webp/car-18.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-18.jpg" alt="Fiat Panda — ElegAuto" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-3-640.webp 640w, assets/img/webp/car-3.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-3.jpg" alt="Fiat 500e — ElegAuto" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-22-640.webp 640w, assets/img/webp/car-22.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-22.jpg" alt="Audi A3 — ElegAuto" width="1080" height="1440"></picture><figcaption class="deck-badge">Audi A3</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-20-640.webp 640w, assets/img/webp/car-20.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-20.jpg" alt="Abarth 500 — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Abarth 500</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-6-640.webp 640w, assets/img/webp/car-6.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-6.jpg" alt="Peugeot 3008 — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-11-640.webp 640w, assets/img/webp/car-11.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-11.jpg" alt="Fiat Panda — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-17-640.webp 640w, assets/img/webp/car-17.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-17.jpg" alt="Volkswagen Golf — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-10-640.webp 640w, assets/img/webp/car-10.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-10.jpg" alt="Alfa Romeo Giulietta — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
+          <figure class="deck-card"><picture><source type="image/webp" srcset="assets/img/webp/car-7-640.webp 640w, assets/img/webp/car-7.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-7.jpg" alt="Jeep Compass — ElegAuto" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
           <!-- duplicato per loop continuo verso destra -->
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-18.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-3.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-22.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Audi A3</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-20.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Abarth 500</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-6.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-11.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-17.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-10.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
-          <figure class="deck-card" aria-hidden="true"><img src="assets/img/car-7.jpg" alt="" loading="lazy"><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-18-640.webp 640w, assets/img/webp/car-18.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-18.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-3-640.webp 640w, assets/img/webp/car-3.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-3.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat 500e</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-22-640.webp 640w, assets/img/webp/car-22.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-22.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Audi A3</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-20-640.webp 640w, assets/img/webp/car-20.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-20.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Abarth 500</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-6-640.webp 640w, assets/img/webp/car-6.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-6.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Peugeot 3008</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-11-640.webp 640w, assets/img/webp/car-11.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-11.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Fiat Panda</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-17-640.webp 640w, assets/img/webp/car-17.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-17.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Volkswagen Golf</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-10-640.webp 640w, assets/img/webp/car-10.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-10.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Alfa Giulietta</figcaption></figure>
+          <figure class="deck-card" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/webp/car-7-640.webp 640w, assets/img/webp/car-7.webp 1080w" sizes="(max-width:1023px) 168px, 224px"><img src="assets/img/car-7.jpg" alt="" loading="lazy" width="1080" height="1440"></picture><figcaption class="deck-badge">Jeep Compass</figcaption></figure>
         </div>
       </div>
       <!-- centered overlay caption -->
@@ -917,7 +932,7 @@
           <span class="ghost exp-num absolute -top-14 -left-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none">01</span>
           <div class="exp-parax">
           <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
-            <img src="assets/img/exp-cerchio.jpg" alt="Cerchio in lega AMG con pinza freno rossa" class="exp-photo" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="assets/img/webp/exp-cerchio.webp"><img src="assets/img/exp-cerchio.jpg" alt="Cerchio in lega AMG con pinza freno rossa" class="exp-photo" loading="lazy" decoding="async" width="1200" height="1600"></picture>
             <span class="exp-sheen"></span>
             <span class="exp-glare"></span>
             <div class="hotspot" style="top:42%;left:52%"><span class="hs-dot"></span><span class="hs-label">Cerchi in lega</span></div>
@@ -937,7 +952,7 @@
           <span class="ghost exp-num exp-num-r absolute -top-14 -right-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none text-right w-full">02</span>
           <div class="exp-parax">
           <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
-            <img src="assets/img/exp-motore.jpg" alt="Motore Mercedes-AMG nel vano sotto il cofano" class="exp-photo" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="assets/img/webp/exp-motore.webp"><img src="assets/img/exp-motore.jpg" alt="Motore Mercedes-AMG nel vano sotto il cofano" class="exp-photo" loading="lazy" decoding="async" width="1400" height="933"></picture>
             <span class="exp-sheen"></span>
             <span class="exp-glare"></span>
             <div class="hotspot" style="top:42%;left:48%"><span class="hs-dot"></span><span class="hs-label">Motore verificato</span></div>
@@ -957,7 +972,7 @@
           <span class="ghost exp-num absolute -top-14 -left-2 font-display font-bold text-[18vw] md:text-[10vw] leading-none select-none pointer-events-none">03</span>
           <div class="exp-parax">
           <div class="exp-frame relative rounded-3xl overflow-hidden border border-gold/15 bg-emerald-900/30 aspect-[4/3] group">
-            <img src="assets/img/exp-carrozzeria.jpg" alt="Faro full LED e carrozzeria opaca" class="exp-photo" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="assets/img/webp/exp-carrozzeria.webp"><img src="assets/img/exp-carrozzeria.jpg" alt="Faro full LED e carrozzeria opaca" class="exp-photo" loading="lazy" decoding="async" width="1100" height="1782"></picture>
             <span class="exp-sheen"></span>
             <span class="exp-glare"></span>
             <div class="hotspot" style="top:54%;left:40%"><span class="hs-dot"></span><span class="hs-label">Fari impeccabili</span></div>
@@ -1231,6 +1246,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="border-t border-gold/15 bg-emerald-950 py-14">
